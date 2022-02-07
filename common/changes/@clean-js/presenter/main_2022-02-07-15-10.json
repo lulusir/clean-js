@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@clean-js/presenter",
+      "comment": "change tsconfig",
+      "type": "none"
+    }
+  ],
+  "packageName": "@clean-js/presenter"
+}

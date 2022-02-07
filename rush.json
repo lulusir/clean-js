@@ -19,9 +19,12 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 2,
 
-  // "allowMostlyStandardPackageNames": true,
+  "allowMostlyStandardPackageNames": false,
 
   "gitPolicy": {},
+  // "approvedPackagesPolicy": {
+  //   "reviewCategories": ["production"]
+  // },
 
   "repository": {
     "url": "https://github.com/lulusir/clean-js",
@@ -61,14 +64,12 @@
     {
       "packageName": "@clean-js/presenter",
       "projectFolder": "packages/presenter",
-      "reviewCategory": "production",
       "cyclicDependencyProjects": ["@clean-js/react-presenter"],
       "shouldPublish": true
     },
     {
       "packageName": "@clean-js/react-presenter",
       "projectFolder": "packages/react-presenter",
-      "reviewCategory": "production",
       "cyclicDependencyProjects": ["@clean-js/presenter"],
       "shouldPublish": true
     }

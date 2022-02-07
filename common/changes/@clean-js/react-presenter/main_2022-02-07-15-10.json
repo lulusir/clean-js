@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@clean-js/react-presenter",
+      "comment": "config change",
+      "type": "none"
+    }
+  ],
+  "packageName": "@clean-js/react-presenter"
+}
