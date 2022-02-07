@@ -1,7 +1,6 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-// const BundleAnalyzerPlugin =
-//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   entry: './src/index.ts',
@@ -15,13 +14,15 @@ module.exports = {
       }),
     ],
   },
-  // target: "node",
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,
+        options: {
+          configFile: 'tsconfig.build.json',
+        },
       },
     ],
   },
@@ -29,25 +30,19 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   externals: {
-    react: 'react',
-    '@clean-js/presenter': '@clean-js/presenter',
+    // '@lujs/di': '@lujs/di',
+    // eventemitter3: 'eventemitter3',
+    // immer: 'immer',
+    // 'reflect-metadata': 'reflect-metadata',
   },
-  // devtool: 'source-map',
-  // experiments: {
-  //   outputModule: true,
-  // },
   output: {
     clean: true,
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
     library: {
-      name: '@lujs/react-mvp-adaptor',
+      name: '@clean-js/presenter',
       type: 'umd',
     },
-    // environment: { module: true },
-    // library: {
-    //   type: 'module',
-    // },
   },
 };

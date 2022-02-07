@@ -1,6 +1,7 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const BundleAnalyzerPlugin =
+//   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.ts',
@@ -14,6 +15,7 @@ module.exports = {
       }),
     ],
   },
+  // target: "node",
   module: {
     rules: [
       {
@@ -27,19 +29,25 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   externals: {
-    // '@lujs/di': '@lujs/di',
-    // eventemitter3: 'eventemitter3',
-    // immer: 'immer',
-    // 'reflect-metadata': 'reflect-metadata',
+    react: 'react',
+    '@clean-js/presenter': '@clean-js/presenter',
   },
+  // devtool: 'source-map',
+  // experiments: {
+  //   outputModule: true,
+  // },
   output: {
     clean: true,
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
     library: {
-      name: '@clean-js/presenter',
+      name: '@clean-js/react-presenter',
       type: 'umd',
     },
+    // environment: { module: true },
+    // library: {
+    //   type: 'module',
+    // },
   },
 };

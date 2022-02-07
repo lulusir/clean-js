@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "importHelpers": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": "./",
@@ -25,21 +25,9 @@
     "allowJs": true,
     "outDir": "./dist",
     "paths": {
+      "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"]
     }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": [
-    "src/**/*.spec.ts",
-    "src/**/*.test.ts",
-    "node_modules",
-    "lib",
-    "es",
-    "dist",
-    "typings",
-    "**/__test__",
-    "test",
-    "docs-src",
-    "tests"
-  ]
+  "include": ["src/**/*.ts"]
 }

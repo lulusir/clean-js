@@ -2,9 +2,9 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable max-classes-per-file */
 
-import { usePresenter } from '@lujs/react-mvp-adaptor';
+import { usePresenter } from '@clean-js/react-presenter';
 import '@testing-library/jest-dom';
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { Presenter } from '..';
@@ -33,7 +33,7 @@ const IndexPage = () => {
   const { presenter, state } = usePresenter<IndexPresenter>(IndexPresenter);
   return (
     <div>
-      <p data-testid="p"> {state.loading && 'loading'}</p>
+      <p data-testid="p">{state.loading && 'loading'}</p>
       {/* @ts-ignore */}
       <button data-testid="change" onClick={presenter.changeLoading}>
         change
@@ -45,7 +45,7 @@ const IndexPage = () => {
 it('test react render', () => {
   render(<IndexPage />);
 
-  expect(screen.getByTestId('p')).not.toHaveTextContent('loading');
+  expect(screen.getByTestId('p').innerHTML).not.toBe('loading');
   userEvent.click(screen.getByTestId('change'));
-  expect(screen.getByTestId('p')).toHaveTextContent('loading');
+  expect(screen.getByTestId('p').innerHTML).toBe('loading');
 });

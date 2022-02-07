@@ -12,7 +12,7 @@ import {
 
 interface PresenterContext<P> {
   presenter: H<P>;
-  state: ReturnType<H<P>['getState']>;
+  state: H<P>['state'];
 }
 
 type PresenterConstructor<P> = Constructor<H<P>>;

@@ -1,13 +1,19 @@
 /* eslint-disable max-classes-per-file */
 
-import { Model, Presenter, injectable } from '@clean-js/presenter';
+import { Presenter, injectable } from '@clean-js/presenter';
 import { render, screen } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
 import React, { ReactNode, useRef } from 'react';
 import { Provider, usePresenterContext } from './provider';
 
-class M extends Model<{ name: string; obj: Record<any, any> }> {
+interface IViewState {
+  name: string;
+  obj: Record<any, any>;
+}
+
+@injectable()
+class P extends Presenter<IViewState> {
   constructor() {
     super();
     this.state = {
@@ -15,34 +21,27 @@ class M extends Model<{ name: string; obj: Record<any, any> }> {
       obj: {},
     };
   }
-}
-
-@injectable()
-class P extends Presenter<M> {
-  constructor(private model: M) {
-    super();
-  }
 
   changeName() {
-    this.model.setState((s) => {
+    this.setState((s) => {
       s.name += '!';
     });
   }
 
   changeNameSameValue() {
-    this.model.setState((s) => {
+    this.setState((s) => {
       s.name = 'lujs';
     });
   }
 
   changeNameSameValueObj() {
-    this.model.setState((s) => {
+    this.setState((s) => {
       s.obj = {};
     });
   }
 
-  changeNameWith(obj: M['state']) {
-    this.model.setState(obj);
+  changeNameWith(obj: IViewState) {
+    this.setState(obj);
   }
 }
 

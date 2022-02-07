@@ -1,0 +1,222 @@
+// DO NOT ADD COMMENTS IN THIS FILE.  They will be lost when the Rush tool resaves it.
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
+  "packages": [
+    {
+      "name": "@babel/core",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@babel/plugin-proposal-decorators",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@babel/preset-env",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@babel/preset-typescript",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@clean-js/presenter",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@clean-js/react-presenter",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@lujs/di",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@lujs/react-mvp-adaptor",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@lujs/upload-image",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@routine-js/table",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@testing-library/react",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@testing-library/react-hooks",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@testing-library/user-event",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@types/clone",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@types/jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@types/lodash.clonedeep",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@types/react",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "antd",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "babel-jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "babel-plugin-lodash",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "clean-webpack-plugin",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "declaration-bundler-webpack-plugin",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "dumi",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-config-airbnb-base",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-config-prettier",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-import",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-prettier",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "eventemitter3",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "gh-pages",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "immer",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "jest-coverage-badges",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "lint-staged",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "np",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "prettier",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react-dom",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "react-test-renderer",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "reflect-metadata",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "terser-webpack-plugin",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "ts-jest",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "ts-loader",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "ts-node",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "tslib",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "typescript",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "webpack",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "webpack-bundle-analyzer",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "webpack-cli",
+      "allowedCategories": [ "production" ]
+    },
+    {
+      "name": "yorkie",
+      "allowedCategories": [ "production" ]
+    }
+  ]
+}

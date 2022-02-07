@@ -1,10 +1,18 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable max-classes-per-file */
 
 import { renderHook, act } from '@testing-library/react-hooks';
-import { Model, Presenter, injectable, inject } from '@clean-js/presenter';
+import { Presenter, injectable, inject } from '@clean-js/presenter';
 import { usePresenter } from './usePresenter';
 
-class M extends Model<{ name: string; obj: Record<any, any> }> {
+interface IViewState {
+  name: string;
+  obj: Record<any, any>;
+}
+
+@injectable()
+class P extends Presenter<IViewState> {
   constructor() {
     super();
     this.state = {
@@ -12,34 +20,27 @@ class M extends Model<{ name: string; obj: Record<any, any> }> {
       obj: {},
     };
   }
-}
-
-@injectable()
-class P extends Presenter<M> {
-  constructor(private model: M) {
-    super();
-  }
 
   changeName() {
-    this.model.setState((s) => {
+    this.setState((s) => {
       s.name += '!';
     });
   }
 
   changeNameSameValue() {
-    this.model.setState((s) => {
+    this.setState((s) => {
       s.name = 'lujs';
     });
   }
 
   changeNameSameValueObj() {
-    this.model.setState((s) => {
+    this.setState((s) => {
       s.obj = {};
     });
   }
 
-  changeNameWith(obj: M['state']) {
-    this.model.setState(obj);
+  changeNameWith(obj: IViewState) {
+    this.setState(obj);
   }
 }
 
@@ -57,17 +58,18 @@ describe('should increment counter', () => {
     expect(count).toBe(1);
   });
 
-  it('change state, but not updateView, will not render', () => {
+  it('change state, will  render', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeName();
     });
-    expect(count).toBe(1);
+    expect(count).toBe(2);
+    expect(result.current.state.name).toBe('lujs!');
   });
 
   it('updateView， when state change', () => {
@@ -262,9 +264,13 @@ describe('registry', () => {
     const token = 'token';
 
     @injectable()
-    class A extends Presenter<M> {
-      constructor(@inject(token) public b: B, private model: M) {
+    class A extends Presenter<IViewState> {
+      constructor(@inject(token) public b: B) {
         super();
+        this.state = {
+          name: 'lujs',
+          obj: {},
+        };
       }
 
       _() {
@@ -293,13 +299,17 @@ describe('registry', () => {
     const token = 'token';
 
     @injectable()
-    class A extends Presenter<M> {
-      constructor(@inject(token) public b: B, private model: M) {
+    class A extends Presenter<IViewState> {
+      constructor(@inject(token) public b: B) {
         super();
+        this.state = {
+          name: 'lujs',
+          obj: {},
+        };
       }
 
       changeName() {
-        this.model.setState((s) => {
+        this.setState((s) => {
           s.name += '!';
         });
       }

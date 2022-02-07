@@ -2,7 +2,7 @@ import { container } from '@clean-js/presenter';
 import { useEffect, useRef, useState } from 'react';
 import { Constructor, H } from './types/interface';
 
-type IViewState<P> = ReturnType<H<P>['getState']>;
+type IViewState<P> = ReturnType<H<P>['state']>;
 
 export type IUsePresenterOptions = {
   autoUpdate?: boolean;

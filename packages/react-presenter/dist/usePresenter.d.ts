@@ -9,5 +9,5 @@ export declare type IUsePresenterOptions = {
 export declare const DefaultUsePresenterOptions: IUsePresenterOptions;
 export declare function usePresenter<P>(Cls: Constructor<H<P>>, options?: IUsePresenterOptions): {
     presenter: H<P>;
-    state: ReturnType<H<P>["getState"]>;
+    state: ReturnType<H<P>["state"]>;
 };

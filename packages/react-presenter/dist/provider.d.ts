@@ -3,7 +3,7 @@ import { Constructor, H } from './types/interface';
 import { IUsePresenterOptions } from './usePresenter';
 interface PresenterContext<P> {
     presenter: H<P>;
-    state: ReturnType<H<P>['getState']>;
+    state: H<P>['state'];
 }
 declare type PresenterConstructor<P> = Constructor<H<P>>;
 interface ProviderProps<P> {
