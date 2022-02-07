@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@clean-js/presenter",
+      "comment": "rm log",
+      "type": "patch"
+    }
+  ],
+  "packageName": "@clean-js/presenter"
+}
