@@ -12,3 +12,6 @@ yarn.lock                    merge=binary
 # For more information, see this issue: https://github.com/microsoft/rushstack/issues/1088
 #
 *.json                       linguist-language=JSON-with-Comments
+*.html linguist-detectable=false
+*.js linguist-detectable=false
+*.css linguist-detectable=false

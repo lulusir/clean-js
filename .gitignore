@@ -33,6 +33,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.umi/
 
 # Optional npm cache directory
 .npm
@@ -66,3 +67,4 @@ common/autoinstallers/*/.npmrc
 
 # Heft
 .heft
+
