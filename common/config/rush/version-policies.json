@@ -99,4 +99,11 @@
   // 
   //   // "includeEmailInChangeFile": true
   // }
+  {
+    "policyName": "presenter",
+    "definitionName": "lockStepVersion",
+    "version": "5.62.1",
+    "nextBump": "patch",
+    "mainProject": "@clean-js/presenter"
+  }
 ]

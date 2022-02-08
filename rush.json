@@ -9,6 +9,7 @@
   "pnpmVersion": "6.7.1",
 
   "pnpmOptions": {
+    "strictPeerDependencies": true,
     "useWorkspaces": true
   },
 
@@ -65,12 +66,14 @@
       "packageName": "@clean-js/presenter",
       "projectFolder": "packages/presenter",
       "cyclicDependencyProjects": ["@clean-js/react-presenter"],
+      "versionPolicyName": "presenter",
       "shouldPublish": true
     },
     {
       "packageName": "@clean-js/react-presenter",
       "projectFolder": "packages/react-presenter",
       "cyclicDependencyProjects": ["@clean-js/presenter"],
+      "versionPolicyName": "presenter",
       "shouldPublish": true
     }
   ]

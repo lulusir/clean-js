@@ -1,11 +1,10 @@
 // import cloneDeep from 'clone';
 import EventEmitter from 'eventemitter3';
 import produce, { freeze } from 'immer';
+import { uniqueID } from '../utils/index';
 import { devtools } from '../utils/devtool';
 
-const ModelAction = {
-  modelChange: 'modelChange',
-};
+const emitter = new EventEmitter();
 
 interface UpdateFn<S> {
   (state: S): void;
@@ -14,7 +13,7 @@ interface UpdateFn<S> {
 export abstract class Presenter<S> {
   private _state!: S;
 
-  private __emitter = new EventEmitter();
+  private id = uniqueID();
 
   get state(): S {
     if (this._state === undefined) {
@@ -43,7 +42,7 @@ export abstract class Presenter<S> {
 
     devtools.send(this._state, this.constructor.name);
 
-    this.__emitter.emit(ModelAction.modelChange, this._state);
+    emitter.emit(this.id, this._state);
   }
 
   /**
@@ -52,26 +51,13 @@ export abstract class Presenter<S> {
    * @returns
    */
   subscribe(callback: (state: S) => void) {
-    this.__emitter.on(ModelAction.modelChange, callback);
+    emitter.on(this.id, callback);
     return {
       unsubscribe: () => {
-        this.__emitter.off(ModelAction.modelChange, callback);
+        emitter.off(this.id, callback);
       },
     };
   }
-
-  // getState(): ModelType<M>['state'] {
-  //   if (!this.model) {
-  //     throw Error('Please inject Model');
-  //   }
-  //   return this.model.state;
-  // }
-
-  // get state() {
-  //   return this.getState();
-  // }
-
-  // setState: ModelType<M>['setState'] = (data) => this.model.setState(data);
 
   updateView() {
     throw Error('Please use adapter to bind view');
