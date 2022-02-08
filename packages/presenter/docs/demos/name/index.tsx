@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { usePresenter } from '@lujs/react-mvp-adaptor';
+import { usePresenter } from '@clean-js/react-presenter';
 import { NamePresenter } from './presenter';
 
 const Name = () => {

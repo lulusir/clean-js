@@ -1,8 +1,9 @@
 {
-  "name": "@clean-js/presenter",
+  "name": "docs",
+  "version": "0.1.0",
+  "private": true,
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.4",
   "description": "Front-end clean architecture",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,10 +14,7 @@
     "docs:start": "dumi dev",
     "docs:build": "dumi build",
     "deploy": " npm run docs:build && gh-pages -d dist",
-    "build": "webpack --env production ",
-    "start": "webpack --watch ",
-    "test": "jest --watch",
-    "test:badges": "jest --coverage && jest-coverage-badges"
+    "build": ""
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
@@ -31,7 +29,6 @@
     "@babel/plugin-proposal-decorators": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
-    "@clean-js/react-presenter": "workspace:*",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
@@ -72,10 +69,11 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@lujs/di": "1.1.5",
-    "eventemitter3": "4.0.7",
-    "immer": "9.0.7",
-    "reflect-metadata": "0.1.13",
-    "@lujs/middleware": "~0.0.5"
+    "@routine-js/upload-image": "~0.0.12",
+    "@routine-js/table": "~0.0.4",
+    "react": ">=16.8.0",
+    "@clean-js/presenter": "workspace:*",
+    "@clean-js/react-presenter": "workspace:*",
+    "reflect-metadata": "0.1.13"
   }
 }

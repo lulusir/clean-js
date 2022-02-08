@@ -13,6 +13,7 @@ export const DefaultUsePresenterOptions: IUsePresenterOptions = Object.freeze({
   autoUpdate: true,
   registry: [],
 });
+container.debug('lujs');
 
 const getInstance = <P>(
   Cls: Constructor<H<P>>,
@@ -21,8 +22,10 @@ const getInstance = <P>(
   if (options?.registry?.length) {
     options.registry.forEach((v) => {
       container.register(v.token, { useClass: v.useClass });
+      console.log(container, '==container');
     });
   }
+  console.log(container.resolve(Cls), Cls, 'container.resolve(Cls)');
   return container.resolve(Cls);
 };
 

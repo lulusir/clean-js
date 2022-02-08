@@ -18,40 +18,28 @@ or
 yarn add @clean-js/presenter @clean-js/react-presenter
 ```
 
-## Model
 
-```typescript
-import { Model } from '@clean-js/presenter';
 
+## Presenter
+
+```typescript | pure
 interface IViewState {
   loading: boolean;
   name: string
 }
 
-export class NameModel extends Model<IViewState> {
-  constructor() {
+@injectable()
+export class NamePresenter extends Presenter<IViewState> {
+  constructor(protected readonly model: OrderModel) {
     super();
     this.state = {
       loading: false,
       name: 'lujs'
     }
-}
-
-```
-
-## Presenter
-
-```typescript
-import { Presenter, injectable } from '@clean-js/presenter';
-@injectable()
-export class NamePresenter extends Presenter<NameModel> {
-  constructor(protected readonly model: OrderModel) {
-    super();
   }
 
   changeName() {
     this.setState('aha'); // api of set model state
-    this.updateView(); // api of update view
   }
 }
 ```

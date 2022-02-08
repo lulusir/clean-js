@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
 import { Model, Presenter, injectable } from '@clean-js/presenter';
-import { Provider, usePresenterContext } from '@lujs/react-mvp-adaptor';
+import { Provider, usePresenterContext } from '@clean-js/react-presenter';
 
 class M extends Model<{ name: string; obj: Record<any, any> }> {
   constructor() {

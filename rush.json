@@ -9,7 +9,7 @@
   "pnpmVersion": "6.7.1",
 
   "pnpmOptions": {
-    "strictPeerDependencies": true,
+    "strictPeerDependencies": false,
     "useWorkspaces": true
   },
 
@@ -75,6 +75,10 @@
       "cyclicDependencyProjects": ["@clean-js/presenter"],
       "versionPolicyName": "presenter",
       "shouldPublish": true
+    },
+    {
+      "packageName": "docs",
+      "projectFolder": "packages/docs"
     }
   ]
 }

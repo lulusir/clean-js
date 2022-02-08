@@ -1,0 +1,42 @@
+<mxfile host="65bd71144e">
+    <diagram id="eUPmDrHELA-A2oK3qkls" name="Page-1">
+        <mxGraphModel dx="791" dy="413" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="24" value="(Abstract)Presenter&lt;S&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;gradientColor=none;glass=0;sketch=0;" parent="1" vertex="1">
+                    <mxGeometry x="254" y="362" width="160" height="180" as="geometry">
+                        <mxRectangle x="410" y="410" width="90" height="26" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="25" value="+ _state: S&#10;+ getter state(): S" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="24" vertex="1">
+                    <mxGeometry y="26" width="160" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="" style="html=1;verticalAlign=bottom;startArrow=oval;startFill=1;endArrow=block;startSize=8;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="24" target="29" edge="1">
+                    <mxGeometry width="60" relative="1" as="geometry">
+                        <mxPoint x="160" y="78" as="sourcePoint"/>
+                        <mxPoint x="220" y="78" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="24" vertex="1">
+                    <mxGeometry y="70" width="160" height="8" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="+ setState():void&#10;+ subscribe()&#10;+ updateView()&#10;+ __init()&#10;+ __destory()&#10;+ __useAutoUpdate()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="24" vertex="1">
+                    <mxGeometry y="78" width="160" height="102" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="devtool" style="html=1;glass=0;sketch=0;gradientColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="415" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="emitter" style="html=1;glass=0;sketch=0;gradientColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="541" y="499" width="110" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=none;html=1;entryX=0.002;entryY=0.427;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="32">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="414" y="520.2213740458016" as="sourcePoint"/>
+                        <mxPoint x="541" y="522.1603053435114" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

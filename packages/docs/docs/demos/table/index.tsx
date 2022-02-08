@@ -5,6 +5,7 @@ import {
   AbsTableService,
   TableServiceToken,
 } from '@routine-js/table';
+import 'reflect-metadata';
 
 interface Row {
   name: string;
@@ -49,6 +50,7 @@ const Page = () => {
 
       <button
         onClick={() => {
+          console.log(presenter);
           presenter.getTable();
         }}
       >

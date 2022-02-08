@@ -12,7 +12,12 @@ import {
 import { usePresenter } from '@clean-js/react-presenter';
 
 class MyUploadService extends AbsUploadService {
-  upload(file) {
+  upload(files: File): Promise<{
+    [p: string]: any;
+    name: string;
+    url: string;
+    thumbUrl: string;
+  }> {
     // 自定义上传功能
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -77,7 +82,7 @@ const Page = () => {
       <div>
         <button
           onClick={() => {
-            presenter.selectImage().catch((e) => {
+            presenter.select().catch((e) => {
               setErr(e);
             });
           }}
@@ -88,7 +93,7 @@ const Page = () => {
       <div>
         <button
           onClick={() => {
-            presenter.uploadFile();
+            presenter.upload();
           }}
         >
           upload

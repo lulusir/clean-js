@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { Spin } from 'antd';
-
 import { usePresenter } from '@clean-js/react-presenter';
 import { TodoPresenter } from './module/todo/index.presenter';
 
