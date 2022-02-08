@@ -2,8 +2,8 @@
   "changes": [
     {
       "packageName": "@clean-js/presenter",
-      "comment": "rm log",
-      "type": "patch"
+      "comment": "",
+      "type": "none"
     }
   ],
   "packageName": "@clean-js/presenter"

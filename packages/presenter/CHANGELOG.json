@@ -2,6 +2,18 @@
   "name": "@clean-js/presenter",
   "entries": [
     {
+      "version": "0.0.4",
+      "tag": "@clean-js/presenter_v0.0.4",
+      "date": "Tue, 08 Feb 2022 08:00:21 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "rm log"
+          }
+        ]
+      }
+    },
+    {
       "version": "0.0.2",
       "tag": "@clean-js/presenter_v0.0.2",
       "date": "Mon, 07 Feb 2022 16:09:57 GMT",
