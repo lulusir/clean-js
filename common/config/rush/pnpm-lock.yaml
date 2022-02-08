@@ -11,9 +11,9 @@ importers:
       '@babel/plugin-proposal-decorators': ^7.16.7
       '@babel/preset-env': ^7.16.5
       '@babel/preset-typescript': ^7.16.5
-      '@clean-js/presenter': workspace:*
-      '@clean-js/react-presenter': workspace:*
-      '@routine-js/table': ~0.0.4
+      '@clean-js/presenter': 0.0.5
+      '@clean-js/react-presenter': 0.0.5
+      '@routine-js/table': ~0.0.8
       '@routine-js/upload-image': ~0.0.12
       '@testing-library/jest-dom': ^5.16.1
       '@testing-library/react': ^12.1.2
@@ -56,9 +56,9 @@ importers:
       webpack-cli: ^4.9.1
       yorkie: ^2.0.0
     dependencies:
-      '@clean-js/presenter': link:../presenter
-      '@clean-js/react-presenter': link:../react-presenter
-      '@routine-js/table': 0.0.5
+      '@clean-js/presenter': 0.0.5
+      '@clean-js/react-presenter': 0.0.5
+      '@routine-js/table': 0.0.8_@clean-js+presenter@0.0.5
       '@routine-js/upload-image': 0.0.12
       react: 17.0.2
       reflect-metadata: 0.1.13
@@ -113,7 +113,7 @@ importers:
       '@babel/preset-env': ^7.16.5
       '@babel/preset-typescript': ^7.16.5
       '@clean-js/react-presenter': workspace:*
-      '@lujs/di': 1.1.5
+      '@lujs/di': ~1.1.6
       '@lujs/middleware': ~0.0.5
       '@testing-library/jest-dom': ^5.16.1
       '@testing-library/react': ^12.1.2
@@ -157,7 +157,7 @@ importers:
       webpack-cli: ^4.9.1
       yorkie: ^2.0.0
     dependencies:
-      '@lujs/di': 1.1.5
+      '@lujs/di': 1.1.6
       '@lujs/middleware': 0.0.5
       eventemitter3: 4.0.7
       immer: 9.0.7
@@ -1601,10 +1601,27 @@ packages:
       reflect-metadata: 0.1.13
     dev: false
 
+  /@clean-js/presenter/0.0.5:
+    resolution: {integrity: sha512-FI8Zve+qFC3nB3LUzf3DxZMiGs/ge9kfmYReY25nMCGf3iDiiOnJwjYgvtqpIVeP54Y8RhTktrRj3Y2eZbBhDw==}
+    dependencies:
+      '@lujs/di': 1.1.5
+      '@lujs/middleware': 0.0.5
+      eventemitter3: 4.0.7
+      immer: 9.0.7
+      reflect-metadata: 0.1.13
+    dev: false
+
   /@clean-js/react-presenter/0.0.4:
     resolution: {integrity: sha512-YlBNuZrNTYtMArvC6crN6rLqj7LnRNBJ7noFiqb58dQ/f7Im9xHHQew0GoX+Caf4OfVMrgS0oTqJoBQ4o2IW8g==}
     dependencies:
       '@clean-js/presenter': 0.0.4
+      react: 17.0.2
+    dev: false
+
+  /@clean-js/react-presenter/0.0.5:
+    resolution: {integrity: sha512-scbHxZivtJ0GnJfqrpKKCvFbuoFgD5uckwGl3CZ84e+BhT42CkYrLaWkiexs2wZj3za5RAoDFQp3xplm8T2iiQ==}
+    dependencies:
+      '@clean-js/presenter': 0.0.5
       react: 17.0.2
     dev: false
 
@@ -1902,6 +1919,12 @@ packages:
       tslib: 2.3.1
     dev: false
 
+  /@lujs/di/1.1.6:
+    resolution: {integrity: sha512-UayYj+dEHkMwPScUCQAteDJdl+dlgs2bs7qE5swYgSznLss0Vyml9SaIACwzY2dkg2WrlB8Lf9M39eY6p05CdA==}
+    dependencies:
+      tslib: 2.3.1
+    dev: false
+
   /@lujs/middleware/0.0.5:
     resolution: {integrity: sha512-kWPVvJxvrah/vWRACDCpiTDVj63enz/KUypKwTwYfNOp6SZmxZsgI69lhqOsjO76orjv9eT/9LNo2V3SuBNNcA==}
     dev: false
@@ -1944,11 +1967,12 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@routine-js/table/0.0.5:
-    resolution: {integrity: sha512-kSiRcte3OWfk7AjECyZq2dSF1b7jaqjF4X77fva44IgbjP3lv7hpCJvui5J3oEj4k3bfpximGt4MsQlAxfqdXA==}
+  /@routine-js/table/0.0.8_@clean-js+presenter@0.0.5:
+    resolution: {integrity: sha512-evFmYMf2Qb08JHD7y9RJBofBpHFY1jS8pIH/z5gu/7GUhDZinGNsdFotGJiPWQHmFlTIcAPqRBrQm5BShP18bg==}
+    peerDependencies:
+      '@clean-js/presenter': ^0.0.5
     dependencies:
-      '@clean-js/presenter': 0.0.4
-      reflect-metadata: 0.1.13
+      '@clean-js/presenter': 0.0.5
     dev: false
 
   /@routine-js/upload-image/0.0.12:

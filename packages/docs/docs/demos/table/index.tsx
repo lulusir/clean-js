@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { usePresenter } from '@clean-js/react-presenter';
+import { injectable } from '@clean-js/presenter';
 import {
   TablePresenter,
   AbsTableService,
   TableServiceToken,
 } from '@routine-js/table';
-import 'reflect-metadata';
 
 interface Row {
   name: string;
@@ -34,6 +34,10 @@ class MyService extends AbsTableService<Row, Params> {
       }, 1000);
     });
   }
+}
+@injectable()
+class A {
+  constructor(private s: MyService) {}
 }
 
 const Page = () => {

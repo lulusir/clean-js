@@ -2,7 +2,7 @@
   "name": "@clean-js/presenter",
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Front-end clean architecture",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -72,10 +72,10 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@lujs/di": "1.1.5",
+    "@lujs/middleware": "~0.0.5",
     "eventemitter3": "4.0.7",
     "immer": "9.0.7",
     "reflect-metadata": "0.1.13",
-    "@lujs/middleware": "~0.0.5"
+    "@lujs/di": "~1.1.6"
   }
 }

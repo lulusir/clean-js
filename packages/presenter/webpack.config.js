@@ -6,8 +6,9 @@ module.exports = {
   entry: './src/index.ts',
   // plugins: [new BundleAnalyzerPlugin()],
   mode: 'production',
+  devtool: 'source-map',
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new TerserPlugin({
         extractComments: false,
@@ -33,7 +34,7 @@ module.exports = {
     // '@lujs/di': '@lujs/di',
     // eventemitter3: 'eventemitter3',
     // immer: 'immer',
-    'reflect-metadata': 'reflect-metadata',
+    // 'reflect-metadata': 'reflect-metadata',
   },
   output: {
     clean: true,
