@@ -49,7 +49,7 @@ npm install @routine-js/upload-image --save
 ### API
 ### example
 
-<!-- <code src="../demos/upload-image/index.tsx"></code> -->
+<code src="../demos/upload-image/index.tsx"></code>
 ### Select Service
 1. 实现选图服务，实现Select方法即可，这里可以使用库提供的方法
 2. 使用中间件；可以在这里实现判断大小，尺寸等逻辑，这个库也有默认提供的方法

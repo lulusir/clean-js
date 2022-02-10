@@ -74,6 +74,6 @@
     "@clean-js/presenter": "0.0.5",
     "@clean-js/react-presenter": "0.0.5",
     "reflect-metadata": "0.1.13",
-    "@routine-js/table": "~0.0.8"
+    "@routine-js/table": "~0.0.9"
   }
 }

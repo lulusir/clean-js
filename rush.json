@@ -78,7 +78,11 @@
     },
     {
       "packageName": "docs",
-      "projectFolder": "packages/docs"
+      "projectFolder": "docs/docs"
+    },
+    {
+      "packageName": "example-react",
+      "projectFolder": "examples/react"
     }
   ]
 }

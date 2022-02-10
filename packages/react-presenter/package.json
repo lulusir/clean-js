@@ -64,7 +64,7 @@
     "webpack-cli": "^4.9.1",
     "yorkie": "^2.0.0"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@clean-js/presenter": "workspace:*",
     "react": ">=16.8.0"
   }

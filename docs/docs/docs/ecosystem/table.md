@@ -9,7 +9,7 @@
 
 <code src="../demos/table/index.tsx"></code>
 #### Full example
-<!-- <code src="../demos/table/antdTable.tsx"></code> -->
+<code src="../demos/table/antdTable.tsx"></code>
 
 1.实现获取表单数据的服务
 
