@@ -25,9 +25,9 @@ hero:
 
 <img src="https://lulusir.github.io/mvp-docs/mvp.png" width = "600"  alt="mvp" align=center />
 
-- Model，一般是要在界面上显示需要的数据，或者临时数据
 
 - View，一般是 react，vue 之类的视图层，它显示数据，并将事件绑定到 Presenter
 
-- Presenter, 提供方法和 Model 给到 View
+- Presenter, 提供方法和 ViewState 给到 View
+
 - service 实现我们的业务逻辑

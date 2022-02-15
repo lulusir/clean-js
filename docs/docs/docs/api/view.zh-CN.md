@@ -58,11 +58,11 @@ function usePresenter<P>(
 | options.autoUpdate | 是否在 setState 之后默认更新 view | true                                         |        |
 | options.registry   | Presenter 的注册类，用于依赖注入  | { token: any; useClass: Constructor<any> }[] |        |
 | return.presenter   | 返回的 Presenter 实例             | Presenter                                    |        |
-| return.state       | 等同于 model 的 setState          | Model['setState']                            |        |
+| return.state       | 等同于 Presenter 的 setState          | Model['setState']                            |        |
 
 ## Provider
 
-```typescript
+```typescript | pure
 const ComA = () => {
   const { state } = usePresenterContext(P);
   return (

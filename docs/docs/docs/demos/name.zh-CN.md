@@ -6,4 +6,4 @@ nav:
 
 # Name
 
-<!-- <code src="./name/index.tsx"></code> -->
+<code src="./name/index.tsx"></code>

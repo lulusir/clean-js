@@ -19,6 +19,7 @@ nav:
 ```typescript | pure
 import { Presenter, injectable, inject } from '@clean-js/presenter';
 
+@injectable()
 export class NamePresenter extends Presenter<NameModel> {
   constructor(protected model: NameModel, @inject('someService' service: IService)) {
     super();

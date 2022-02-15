@@ -7,24 +7,22 @@ nav:
 
 # Presenter
 
-> 提供方法和 Model 给到 View
+> 提供方法和 State 给到 View
 
 ## usage
 
-- 注入 model 类
-- 使用 updateView 通知视图更新
-- 使用 getState 可以获取 model.state
 
 ```typescript | pure
-// import { Presenter, injectable } from '@clean-js/presenter';
+import { Presenter, injectable } from '@clean-js/presenter';
 
 interface IViewState {
   loading: boolean;
   name: string
 }
 
+@injectable()
 export class NamePresenter extends Presenter<IViewState> {
-  constructor(protected model: NameModel) {
+  constructor() {
     super();
     this.state = {
       loading: false,
@@ -33,7 +31,7 @@ export class NamePresenter extends Presenter<IViewState> {
   }
 
   changeName() {
-    this.model.setState('aha'); // api of set model state
+    this.setState('aha'); // api of set model state
   }
 }
 ```
@@ -42,10 +40,10 @@ export class NamePresenter extends Presenter<IViewState> {
 
 | 参数       | 说明                         | 类型                | 默认值 |
 | ---------- | ---------------------------- | ------------------- | ------ |
-| getState   | 返回 model 中的 state        | () : Model['state'] |        |
-| updateView | 更新 view 的方法             | () : void           |        |
-| state      | getter 返回 model 中的 state | getter              |        |
-| setState   | 等同于 model 的 setState     | Model['setState']   |        |
+| getState   | 返回 state        | () : Model['state'] |        |
+| updateView | 更新 view 的方法，一般不需要用，由框架自动调用             | () : void           |        |
+| state      | getter 返回 state | getter              |        |
+| setState   |  设置state   | Model['setState']   |        |
 
 #### PresenterFactor
 

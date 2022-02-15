@@ -5,6 +5,6 @@ export default defineConfig({
   mode: 'site',
   logo: 'logo.png',
   locales: [['zh-CN', '中文']],
-  publicPath: '/mvp/',
-  base: '/mvp/'
+  publicPath: '/clean-js/',
+  base: '/clean-js/'
 });
