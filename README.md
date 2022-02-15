@@ -9,7 +9,7 @@
 
 </div>
 
-[Docs](https://lulusir.github.io/mvp/getting-started)
+[Docs](https://lulusir.github.io/clean-js/getting-started)
 
 <h2 align = "center"> 整洁架构</h2>
 
