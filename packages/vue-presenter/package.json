@@ -36,6 +36,7 @@
     "@types/react": "^17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
+    "@vue/test-utils": "~2.0.0-rc.17",
     "antd": "4.16.13",
     "babel-jest": "^27.4.5",
     "babel-plugin-lodash": "^3.3.4",
@@ -62,12 +63,11 @@
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
-    "yorkie": "^2.0.0",
-    "@vue/test-utils": "~2.0.0-rc.17"
+    "yorkie": "^2.0.0"
   },
   "dependencies": {
     "@clean-js/presenter": "workspace:*",
-    "vue": "~3.2.31",
-    "jest-environment-jsdom": "~27.5.1"
+    "jest-environment-jsdom": "~27.5.1",
+    "vue": "~3.2.31"
   }
 }
