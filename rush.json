@@ -4,34 +4,25 @@
  */
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-
   "rushVersion": "5.62.1",
   "pnpmVersion": "6.7.1",
-
   "pnpmOptions": {
     "strictPeerDependencies": false,
     "useWorkspaces": true
   },
-
   "nodeSupportedVersionRange": ">=12.13.0 <13.0.0 || >=14.15.0 <15.0.0 || >=16.13.0 <17.0.0",
-
   "ensureConsistentVersions": true,
-
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 2,
-
   "allowMostlyStandardPackageNames": false,
-
   "gitPolicy": {},
   // "approvedPackagesPolicy": {
   //   "reviewCategories": ["production"]
   // },
-
   "repository": {
     "url": "https://github.com/lulusir/clean-js",
     "defaultBranch": "main"
   },
-
   /**
    * Event hooks are customized script actions that Rush executes when specific events occur
    */
@@ -42,37 +33,45 @@
     "preRushInstall": [
       // "common/scripts/pre-rush-install.js"
     ],
-
     /**
      * The list of shell commands to run after the Rush installation finishes
      */
     "postRushInstall": [],
-
     /**
      * The list of shell commands to run before the Rush build command starts
      */
     "preRushBuild": [],
-
     /**
      * The list of shell commands to run after the Rush build command finishes
      */
     "postRushBuild": []
   },
-
   "variants": [],
-
   "projects": [
     {
       "packageName": "@clean-js/presenter",
       "projectFolder": "packages/presenter",
-      "cyclicDependencyProjects": ["@clean-js/react-presenter"],
+      "cyclicDependencyProjects": [
+        "@clean-js/react-presenter"
+      ],
       "versionPolicyName": "presenter",
       "shouldPublish": true
     },
     {
       "packageName": "@clean-js/react-presenter",
       "projectFolder": "packages/react-presenter",
-      "cyclicDependencyProjects": ["@clean-js/presenter"],
+      "cyclicDependencyProjects": [
+        "@clean-js/presenter"
+      ],
+      "versionPolicyName": "presenter",
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@clean-js/vue-presenter",
+      "projectFolder": "packages/vue-presenter",
+      "cyclicDependencyProjects": [
+        "@clean-js/presenter"
+      ],
       "versionPolicyName": "presenter",
       "shouldPublish": true
     },

@@ -1,5 +1,5 @@
 {
-  "name": "@clean-js/react-presenter",
+  "name": "@clean-js/vue-presenter",
   "author": "lujs",
   "license": "MIT",
   "version": "0.0.5",
@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack --env production ",
+    "build": " ",
     "start": "webpack --watch ",
     "test": "jest --watch"
   },
@@ -62,12 +62,12 @@
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
-    "yorkie": "^2.0.0"
+    "yorkie": "^2.0.0",
+    "@vue/test-utils": "~2.0.0-rc.17"
   },
   "dependencies": {
-    "@clean-js/presenter": "workspace:*"
-  },
-  "peerDependencies": {
-    "react": ">=16.8.0"
+    "@clean-js/presenter": "workspace:*",
+    "vue": "~3.2.31",
+    "jest-environment-jsdom": "~27.5.1"
   }
 }
