@@ -1,6 +1,8 @@
-import { container } from '@clean-js/presenter';
-import { onMounted, onUnmounted, reactive } from 'vue';
-import { Constructor, H } from './types/interface';
+import { container } from "@clean-js/presenter";
+import { onMounted, onUnmounted, reactive } from "vue";
+import { Constructor, H } from "./types/interface";
+
+container.debug("lujs");
 
 export type IUsePresenterOptions = {
   autoUpdate?: boolean;
@@ -14,19 +16,22 @@ export const DefaultUsePresenterOptions: IUsePresenterOptions = Object.freeze({
 
 const getInstance = <P>(
   Cls: Constructor<H<P>>,
-  options?: { registry?: { token: any; useClass: Constructor<any> }[] },
+  options?: { registry?: { token: any; useClass: Constructor<any> }[] }
 ) => {
+  console.log(options, "options");
   if (options?.registry?.length) {
     options.registry.forEach((v) => {
       container.register(v.token, { useClass: v.useClass });
     });
+
+    console.log(container.resolve(Cls), "==c");
   }
   return container.resolve(Cls);
 };
 
 export function usePresenter<P>(
   Cls: Constructor<H<P>>,
-  options = DefaultUsePresenterOptions,
+  options = DefaultUsePresenterOptions
 ) {
   const opt = {
     ...DefaultUsePresenterOptions,
@@ -36,10 +41,10 @@ export function usePresenter<P>(
   const refPresenter = reactive(getInstance<P>(Cls, opt));
 
   onMounted(() => {
-    console.log(refPresenter, 'refPresenter');
+    console.log(refPresenter, "refPresenter");
     refPresenter.__init();
     refPresenter.updateView = () => {
-      console.log('update');
+      console.log("update");
     };
   });
 
@@ -49,5 +54,6 @@ export function usePresenter<P>(
 
   return {
     presenter: refPresenter,
+    state: refPresenter.state,
   };
 }

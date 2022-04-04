@@ -82,6 +82,10 @@
     {
       "packageName": "example-react",
       "projectFolder": "examples/react"
+    },
+    {
+      "packageName": "example-vue3",
+      "projectFolder": "examples/vue3"
     }
   ]
 }

@@ -10,7 +10,7 @@
     "dist"
   ],
   "scripts": {
-    "build": " ",
+    "build": "webpack --env production ",
     "start": "webpack --watch ",
     "test": "jest --watch"
   },
