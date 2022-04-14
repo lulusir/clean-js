@@ -13,7 +13,7 @@ importers:
       '@babel/preset-typescript': ^7.16.5
       '@clean-js/presenter': workspace:*
       '@clean-js/react-presenter': 0.0.5
-      '@routine-js/table': ~0.0.9
+      '@routine-js/table': ~0.0.10
       '@routine-js/upload-image': ~0.0.12
       '@testing-library/jest-dom': ^5.16.1
       '@testing-library/react': ^12.1.2
@@ -111,7 +111,7 @@ importers:
       '@ant-design/pro-layout': ^6.5.0
       '@clean-js/presenter': workspace:*
       '@clean-js/react-presenter': 0.0.5
-      '@routine-js/table': ~0.0.9
+      '@routine-js/table': ~0.0.10
       '@types/react': ^17.0.38
       '@types/react-dom': ^17.0.0
       '@umijs/preset-react': 1.x
@@ -2886,6 +2886,10 @@ packages:
   /@types/estree/0.0.50:
     resolution: {integrity: sha512-C6N5s2ZFtuZRj54k2/zyRhNDjJwwcViAM3Nbm8zjBpbqAdZ00mr0CFxvSKeO8Y/e03WVFLpQMdHYVfUd6SB+Hw==}
     dev: true
+
+  /@types/estree/0.0.51:
+    resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
+    dev: false
 
   /@types/glob/7.2.0:
     resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}

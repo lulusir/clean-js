@@ -13,7 +13,7 @@
     "docs:start": "dumi dev",
     "docs:build": "dumi build",
     "deploy": " npm run docs:build && gh-pages -d dist",
-    "build": "webpack --env production ",
+    "build": "father-build",
     "start": "webpack --watch ",
     "test": "jest --watch",
     "test:badges": "jest --coverage && jest-coverage-badges"
@@ -69,7 +69,8 @@
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
-    "yorkie": "^2.0.0"
+    "yorkie": "^2.0.0",
+    "father-build": "~1.21.2"
   },
   "dependencies": {
     "@lujs/middleware": "~0.0.5",
