@@ -2,7 +2,7 @@
   "name": "@clean-js/react-presenter",
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "description": "react adaptor",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -55,7 +55,6 @@
     "jest": "^27.4.5",
     "lint-staged": "^10.0.7",
     "prettier": "^2.5.1",
-    "react-dom": "^17.0.2",
     "react-test-renderer": "^17.0.2",
     "terser-webpack-plugin": "^5.3.0",
     "ts-jest": "^27.1.2",
@@ -69,11 +68,12 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@clean-js/presenter": "workspace:*",
+    "@clean-js/presenter": "0.0.8",
     "@types/use-sync-external-store": "^0.0.3",
     "use-sync-external-store": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "16.14.0"
+    "@types/react": "^16.8 || ^17.0 || ^18.0",
+    "react": "^16.8 || ^17.0 || ^18.0"
   }
 }

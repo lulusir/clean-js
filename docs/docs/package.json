@@ -70,8 +70,8 @@
   "dependencies": {
     "@routine-js/upload-image": "~0.0.12",
     "react": "16.14.0",
-    "@clean-js/presenter": "workspace:*",
-    "@clean-js/react-presenter": "workspace:*",
+    "@clean-js/presenter": "0.0.8",
+    "@clean-js/react-presenter": "0.0.8",
     "reflect-metadata": "0.1.13",
     "@routine-js/table": "~0.0.10"
   }
