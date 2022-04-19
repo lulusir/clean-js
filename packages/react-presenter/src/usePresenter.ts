@@ -1,16 +1,15 @@
 import { container } from '@clean-js/presenter';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
+import { useSyncExternalStore } from 'use-sync-external-store/shim';
 import { Constructor, H } from './types/interface';
 
 type IViewState<P> = ReturnType<H<P>['state']>;
 
 export type IUsePresenterOptions = {
-  autoUpdate?: boolean;
   registry?: { token: any; useClass: Constructor<any> }[];
 };
 
 export const DefaultUsePresenterOptions: IUsePresenterOptions = Object.freeze({
-  autoUpdate: true,
   registry: [],
 });
 
@@ -30,41 +29,31 @@ export function usePresenter<P>(
   Cls: Constructor<H<P>>,
   options = DefaultUsePresenterOptions,
 ) {
-  const opt = {
-    ...DefaultUsePresenterOptions,
-    ...options,
-  };
+  const opt = useMemo(
+    () => ({
+      ...DefaultUsePresenterOptions,
+      ...options,
+    }),
+    [options],
+  );
 
-  const ref = useRef(getInstance<P>(Cls, opt));
+  const presenter = useMemo(() => getInstance<P>(Cls, opt), [Cls, opt]);
 
-  const [state, setState] = useState<IViewState<P>>(ref.current.state);
+  const state = useSyncExternalStore(
+    (...args) => {
+      const { unsubscribe } = presenter.subscribe(...args);
+      return unsubscribe;
+    },
+    () => presenter.state,
+  );
 
   useEffect(() => {
-    const p = ref.current;
-    const oldUpdateView = p.updateView;
-    p.updateView = () => {
-      setState((s) => {
-        const n = p.state;
-        return n;
-      });
-    };
+    const p = presenter;
     p.__init();
-    let unsubscribe: () => void | undefined;
-    if (opt.autoUpdate) {
-      unsubscribe = p.__useAutoUpdate().unsubscribe;
-    }
-
     return () => {
-      p.updateView = oldUpdateView;
       p?.__destroy();
-      if (typeof unsubscribe === 'function') {
-        unsubscribe();
-      }
     };
   }, []);
-
-  const presenter = ref.current;
-  // const state = presenter.getState() as ReturnType<H<P>['getState']>;
 
   return {
     presenter,

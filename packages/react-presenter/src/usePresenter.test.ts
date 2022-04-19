@@ -49,12 +49,12 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(count).toBe(1);
-    act(() => {
-      result.current.presenter.updateView();
-    });
+    // act(() => {
+    //   result.current.presenter.updateView();
+    // });
     expect(count).toBe(1);
   });
 
@@ -76,12 +76,11 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeName();
-      result.current.presenter.updateView();
     });
     expect(count).toBe(2);
   });
@@ -90,12 +89,11 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeNameSameValue();
-      result.current.presenter.updateView();
     });
     expect(count).toBe(1);
   });
@@ -104,12 +102,11 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeNameSameValueObj();
-      result.current.presenter.updateView();
     });
     expect(count).toBe(2);
   });
@@ -118,12 +115,11 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeNameWith({ name: 'lujs', obj: {} });
-      result.current.presenter.updateView();
     });
     expect(count).toBe(2);
   });
@@ -132,7 +128,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
     expect(result.current.state.name === 'lujs').toBeTruthy();
   });
@@ -141,7 +137,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P, { autoUpdate: false });
+      return usePresenter<P>(P);
     });
 
     const assign = () => {
@@ -154,7 +150,7 @@ describe('should increment counter', () => {
 });
 
 describe('auto update, should increment counter', () => {
-  it('updateView, when no change', () => {
+  it('change state, will  render, in for loop', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
@@ -162,12 +158,14 @@ describe('auto update, should increment counter', () => {
     });
     expect(count).toBe(1);
     act(() => {
-      result.current.presenter.updateView();
+      for (let i = 0; i < 10000; i++) {
+        result.current.presenter.changeName();
+      }
     });
-    expect(count).toBe(1);
+    expect(count).toBe(2);
   });
 
-  it('change state, but not updateView, will not render', () => {
+  it('change state, will  render', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;

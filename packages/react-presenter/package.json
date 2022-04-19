@@ -6,6 +6,8 @@
   "description": "react adaptor",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "module": "./dist/index.esm.js",
+  "sideEffects": false,
   "files": [
     "dist"
   ],
@@ -65,7 +67,9 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@clean-js/presenter": "workspace:*"
+    "@clean-js/presenter": "workspace:*",
+    "use-sync-external-store": "^1.0.0",
+    "@types/use-sync-external-store": "^0.0.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0"

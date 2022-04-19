@@ -25,6 +25,10 @@ class Devtool {
   }
 
   init(state: any, modelName: string) {
+    if (!entry.useDevTool) {
+      return;
+    }
+
     if (this.instance === null) {
       return;
     }
@@ -40,6 +44,10 @@ class Devtool {
   }
 
   send(state: any, modelName: string) {
+    if (!entry.useDevTool) {
+      return;
+    }
+
     // console.log(this.instance, state, modelName, 'ins');
     if (this.instance === null) {
       return;
@@ -56,6 +64,10 @@ class Devtool {
   }
 
   remove(modelName: string) {
+    if (!entry.useDevTool) {
+      return;
+    }
+
     if (this.instance === null) {
       return;
     }

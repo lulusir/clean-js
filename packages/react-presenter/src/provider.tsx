@@ -40,15 +40,10 @@ function getContext<P>(cls: PresenterConstructor<P>) {
 interface ProviderProps<P> {
   children: ReactNode;
   Presenter: PresenterConstructor<P>;
-  autoUpdate?: IUsePresenterOptions['autoUpdate'];
 }
 
-export function Provider<P>({
-  children,
-  Presenter,
-  autoUpdate = DefaultUsePresenterOptions.autoUpdate,
-}: ProviderProps<P>) {
-  const ctxValue = usePresenter(Presenter, { autoUpdate });
+export function Provider<P>({ children, Presenter }: ProviderProps<P>) {
+  const ctxValue = usePresenter(Presenter);
   const context = useMemo(() => getContext(Presenter), [Presenter]);
   return <context.Provider value={ctxValue}>{children}</context.Provider>;
 }

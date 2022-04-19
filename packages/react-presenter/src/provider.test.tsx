@@ -48,9 +48,7 @@ class P extends Presenter<IViewState> {
 describe('provider', () => {
   it('updateView', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -64,18 +62,12 @@ describe('provider', () => {
       },
       { wrapper },
     );
-    expect(count).toBe(1);
-    act(() => {
-      result.current.presenter.updateView();
-    });
     expect(count).toBe(1);
   });
 
-  it('change state, but not updateView, will not render', () => {
+  it('change state in for loop, only update one time', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -91,16 +83,16 @@ describe('provider', () => {
     );
     expect(count).toBe(1);
     act(() => {
-      result.current.presenter.changeName();
+      for (let i = 0; i < 10000; i++) {
+        result.current.presenter.changeName();
+      }
     });
-    expect(count).toBe(1);
+    expect(count).toBe(2);
   });
 
   it('updateView， when state change', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -117,16 +109,13 @@ describe('provider', () => {
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeName();
-      result.current.presenter.updateView();
     });
     expect(count).toBe(2);
   });
 
   it('set the same state', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -143,16 +132,13 @@ describe('provider', () => {
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeNameSameValue();
-      result.current.presenter.updateView();
     });
     expect(count).toBe(1);
   });
 
   it('set the same state', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -169,16 +155,13 @@ describe('provider', () => {
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeNameSameValueObj();
-      result.current.presenter.updateView();
     });
     expect(count).toBe(2);
   });
 
   it('set the same state', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -195,16 +178,13 @@ describe('provider', () => {
     expect(count).toBe(1);
     act(() => {
       result.current.presenter.changeNameWith({ name: 'lujs', obj: {} });
-      result.current.presenter.updateView();
     });
     expect(count).toBe(2);
   });
 
   it('state', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -224,9 +204,7 @@ describe('provider', () => {
 
   it('state can not assign', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -251,9 +229,7 @@ describe('provider', () => {
 
   it('usePresenterContext will return same state', () => {
     const wrapper = ({ children }: { children: ReactNode }) => (
-      <Provider Presenter={P} autoUpdate={false}>
-        {children}
-      </Provider>
+      <Provider Presenter={P}>{children}</Provider>
     );
     let count = 0;
     const { result } = renderHook(
@@ -274,7 +250,7 @@ describe('provider', () => {
     expect(s1 === s2).toBeTruthy();
     expect(count).toBe(1);
     act(() => {
-      result.current.p1.updateView();
+      // result.current.p1.updateView();
     });
     expect(count).toBe(1);
   });
@@ -298,9 +274,7 @@ describe('provider, use auto update', () => {
       { wrapper },
     );
     expect(count).toBe(1);
-    act(() => {
-      result.current.presenter.updateView();
-    });
+    act(() => {});
     expect(count).toBe(1);
   });
 
@@ -487,7 +461,7 @@ describe('provider, use auto update', () => {
     expect(s1 === s2).toBeTruthy();
     expect(count).toBe(1);
     act(() => {
-      result.current.p1.updateView();
+      // result.current.p1.updateView();
     });
     expect(count).toBe(1);
   });
@@ -511,7 +485,7 @@ describe('Component', () => {
           data-testid="change"
           onClick={() => {
             presenter.changeName();
-            presenter.updateView();
+            // presenter.updateView();
           }}
         >
           change name

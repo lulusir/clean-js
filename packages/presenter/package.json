@@ -6,6 +6,7 @@
   "description": "Front-end clean architecture",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist"
   ],
@@ -76,6 +77,6 @@
     "eventemitter3": "4.0.7",
     "immer": "9.0.7",
     "reflect-metadata": "0.1.13",
-    "@lujs/di": "~1.1.6"
+    "@lujs/di": "~1.1.8"
   }
 }

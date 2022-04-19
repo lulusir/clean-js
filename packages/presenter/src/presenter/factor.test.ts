@@ -23,7 +23,6 @@ describe('factor', () => {
     expect(p).toBeInstanceOf(IndexPresenter);
     expect(p.state.loading).toBe(false);
     expect(p.changeLoading).toBeDefined();
-    expect(p.updateView).toBeDefined();
   });
 
   it('get different obj', () => {

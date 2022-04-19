@@ -6,6 +6,7 @@
   "description": "react adaptor",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "module": "./dist/index.esm.js",
   "files": [
     "dist"
   ],

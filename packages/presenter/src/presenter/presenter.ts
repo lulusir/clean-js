@@ -59,9 +59,9 @@ export abstract class Presenter<S> {
     };
   }
 
-  updateView() {
-    throw Error('Please use adapter to bind view');
-  }
+  // updateView() {
+  //   throw Error('Please use adapter to bind view');
+  // }
 
   __init() {
     devtools.init(this.state, this.constructor.name);
@@ -71,13 +71,13 @@ export abstract class Presenter<S> {
     devtools.remove(this.constructor.name);
   }
 
-  __useAutoUpdate() {
-    const { unsubscribe } = this.subscribe(() => {
-      this.updateView();
-    });
+  // __useAutoUpdate() {
+  //   const { unsubscribe } = this.subscribe(() => {
+  //     this.updateView();
+  //   });
 
-    return {
-      unsubscribe,
-    };
-  }
+  //   return {
+  //     unsubscribe,
+  //   };
+  // }
 }

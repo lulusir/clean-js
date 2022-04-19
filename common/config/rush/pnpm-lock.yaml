@@ -150,7 +150,7 @@ importers:
       '@babel/preset-env': ^7.16.5
       '@babel/preset-typescript': ^7.16.5
       '@clean-js/react-presenter': workspace:*
-      '@lujs/di': ~1.1.6
+      '@lujs/di': ~1.1.8
       '@lujs/middleware': ~0.0.5
       '@testing-library/jest-dom': ^5.16.1
       '@testing-library/react': ^12.1.2
@@ -194,7 +194,7 @@ importers:
       webpack-cli: ^4.9.1
       yorkie: ^2.0.0
     dependencies:
-      '@lujs/di': 1.1.6
+      '@lujs/di': 1.1.8
       '@lujs/middleware': 0.0.5
       eventemitter3: 4.0.7
       immer: 9.0.7
@@ -258,6 +258,7 @@ importers:
       '@types/jest': ^27.0.3
       '@types/lodash.clonedeep': ^4.5.6
       '@types/react': ^17.0.38
+      '@types/use-sync-external-store': ^0.0.3
       '@typescript-eslint/eslint-plugin': ^5.8.0
       '@typescript-eslint/parser': ^5.8.0
       antd: 4.16.13
@@ -283,12 +284,15 @@ importers:
       ts-node: ^10.4.0
       tslib: ~2.3.1
       typescript: ^4.5.4
+      use-sync-external-store: ^1.0.0
       webpack: ^5.65.0
       webpack-bundle-analyzer: ^4.5.0
       webpack-cli: ^4.9.1
       yorkie: ^2.0.0
     dependencies:
       '@clean-js/presenter': link:../presenter
+      '@types/use-sync-external-store': 0.0.3
+      use-sync-external-store: 1.0.0
     devDependencies:
       '@babel/core': 7.17.0
       '@babel/plugin-proposal-decorators': 7.17.0_@babel+core@7.17.0
@@ -2550,8 +2554,8 @@ packages:
       tslib: 2.3.1
     dev: false
 
-  /@lujs/di/1.1.6:
-    resolution: {integrity: sha512-UayYj+dEHkMwPScUCQAteDJdl+dlgs2bs7qE5swYgSznLss0Vyml9SaIACwzY2dkg2WrlB8Lf9M39eY6p05CdA==}
+  /@lujs/di/1.1.8:
+    resolution: {integrity: sha512-eVWFHhdR/5H8gTRm16DNVN3dJzTd5BxWhGzvUaJBnqRHCAZr3OJ96o22FI/Ptlxtfx/XryxHzTO37bpGxwPNYg==}
     dependencies:
       tslib: 2.3.1
     dev: false
@@ -3115,6 +3119,10 @@ packages:
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: true
+
+  /@types/use-sync-external-store/0.0.3:
+    resolution: {integrity: sha512-EwmlvuaxPNej9+T4v5AuBPJa2x2UOJVdjCtDHgcDqitUeOtjnJKJ+apYjVcAoBEMjKW1VVFGZLUb5+qqa09XFA==, tarball: https://npm.bu6.io:443/@types%2fuse-sync-external-store/-/use-sync-external-store-0.0.3.tgz}
+    dev: false
 
   /@types/yargs-parser/20.2.1:
     resolution: {integrity: sha512-7tFImggNeNBVMsn0vLrpn1H1uPrUBdnARPTpZoitY37ZrdJREzf7I16tMrlK3hen349gr1NYh8CmZQa7CTG6Aw==}
@@ -15159,6 +15167,12 @@ packages:
       object-assign: 4.1.1
       react: 17.0.2
     dev: true
+
+  /use-sync-external-store/1.0.0:
+    resolution: {integrity: sha512-AFVsxg5GkFg8GDcxnl+Z0lMAz9rE8DGJCc28qnBuQF7lac57B5smLcT37aXpXIIPz75rW4g3eXHPjhHwdGskOw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0-rc
+    dev: false
 
   /use/3.1.1:
     resolution: {integrity: sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==}

@@ -59,7 +59,7 @@ describe('Presenter', () => {
   it('init', () => {
     const p = new TestP();
     expect(p.state).toBeDefined();
-    expect(p.updateView).toBeDefined();
+    expect(p.subscribe).toBeDefined();
     expect(p.__init).toBeDefined();
     expect(p.__destroy).toBeDefined();
   });
@@ -68,7 +68,7 @@ describe('Presenter', () => {
     const p = new TestP();
     expect(p.state).toBeDefined();
     expect(p.state).toEqual(defaultState);
-    expect(p.updateView).toBeDefined();
+    expect(p.subscribe).toBeDefined();
     expect(p.__init).toBeDefined();
     expect(p.__destroy).toBeDefined();
   });
@@ -80,7 +80,7 @@ describe('Presenter', () => {
       s.a.b.c.push(4);
     });
     expect(p.state.a.b.c).toEqual([1, 2, 3, 4]);
-    expect(p.updateView).toBeDefined();
+    expect(p.subscribe).toBeDefined();
     expect(p.__init).toBeDefined();
     expect(p.__destroy).toBeDefined();
   });
@@ -96,23 +96,50 @@ describe('Presenter', () => {
       },
     });
     expect(p.state.a.b.c).toEqual([1, 2, 3, 4]);
-    expect(p.updateView).toBeDefined();
+    expect(p.subscribe).toBeDefined();
     expect(p.__init).toBeDefined();
     expect(p.__destroy).toBeDefined();
   });
 
-  it('updateView', () => {
-    const p = new TestP();
-    expect(p.updateView).toThrowError();
+  it('set state throw error,when not init', () => {
+    class TestP1 extends Presenter<IViewState> {
+      constructor() {
+        super();
+      }
+    }
+
+    expect(() => {
+      const p = new TestP1();
+      const s = p.state;
+    }).toThrow();
   });
 
-  it('__useAutoUpdate', () => {
+  it('set state throw error', () => {
+    const p = new TestP();
+
+    expect(() => {
+      // @ts-ignore
+      p.state = {
+        a: {
+          b: {
+            c: [1, 2, 3, 4],
+          },
+        },
+      };
+    }).toThrow();
+  });
+
+  // it('updateView', () => {
+  //   const p = new TestP();
+  //   expect(p.updateView).toThrowError();
+  // });
+
+  it('subscribe', () => {
     const p = new TestP();
     let count = 0;
-    p.updateView = () => {
+    p.subscribe(() => {
       count += 1;
-    };
-    p.__useAutoUpdate();
+    });
 
     p.setState((s) => {
       s.a.b.c.push(1);
@@ -121,21 +148,25 @@ describe('Presenter', () => {
     expect(count).toBe(1);
   });
 
-  it('__useAutoUpdate, then updateVIew', () => {
+  it('unsubscribe', () => {
     const p = new TestP();
     let count = 0;
-    p.updateView = () => {
+    const { unsubscribe } = p.subscribe(() => {
       count += 1;
-    };
-    p.__useAutoUpdate();
+    });
+
+    p.setState((s) => {
+      s.a.b.c.push(1);
+    });
+
+    expect(count).toBe(1);
+
+    unsubscribe();
 
     p.setState((s) => {
       s.a.b.c.push(1);
     });
     expect(count).toBe(1);
-    p.updateView();
-
-    expect(count).toBe(2);
   });
 
   it('__init', () => {
