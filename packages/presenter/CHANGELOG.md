@@ -1,6 +1,13 @@
 # Change Log - @clean-js/presenter
 
-This log was last generated on Tue, 19 Apr 2022 04:21:28 GMT and should not be manually modified.
+This log was last generated on Tue, 19 Apr 2022 12:11:20 GMT and should not be manually modified.
+
+## 0.0.8
+Tue, 19 Apr 2022 12:11:20 GMT
+
+### Updates
+
+- use father build
 
 ## 0.0.7
 Tue, 19 Apr 2022 04:21:28 GMT

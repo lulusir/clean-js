@@ -2,12 +2,12 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable max-classes-per-file */
 
-import { usePresenter } from '@clean-js/react-presenter';
 import '@testing-library/jest-dom';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
-import { Presenter } from '..';
+import { Presenter } from '@clean-js/presenter';
+import { usePresenter } from './index';
 
 interface IViewState {
   loading: boolean;

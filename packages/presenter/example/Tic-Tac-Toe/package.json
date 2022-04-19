@@ -23,8 +23,8 @@
     "@ant-design/pro-layout": "^6.5.0",
     "@clean-js/presenter": "^0.2.1",
     "@lujs/react-mvp-adaptor": "^0.3.2",
-    "react": "17.x",
-    "react-dom": "17.x",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "umi": "^3.5.20"
   },
   "devDependencies": {

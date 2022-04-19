@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "umi dev",
-    "build": "umi build",
+    "build-example": "umi build",
+    "build": "echo 1",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
@@ -23,12 +24,12 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
-    "react": ">=16.8.0",
+    "react": "16.14.0",
     "react-dom": "^17.0.2",
     "umi": "^3.5.20",
     "@routine-js/table": "~0.0.10",
     "@clean-js/presenter": "workspace:*",
-    "@clean-js/react-presenter": "0.0.6",
+    "@clean-js/react-presenter": "workspace:*",
     "antd": "4.16.13"
   },
   "devDependencies": {

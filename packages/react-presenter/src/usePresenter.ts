@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, useMemo } from 'react';
 import { useSyncExternalStore } from 'use-sync-external-store/shim';
 import { Constructor, H } from './types/interface';
 
-type IViewState<P> = ReturnType<H<P>['state']>;
+// type IViewState<P> = ReturnType<H<P>['state']>;
 
 export type IUsePresenterOptions = {
   registry?: { token: any; useClass: Constructor<any> }[];

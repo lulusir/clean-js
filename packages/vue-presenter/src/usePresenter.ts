@@ -36,11 +36,7 @@ export function usePresenter<P>(
   const refPresenter = reactive(getInstance<P>(Cls, opt));
 
   onMounted(() => {
-    console.log(refPresenter, 'refPresenter');
     refPresenter.__init();
-    refPresenter.updateView = () => {
-      console.log('update');
-    };
   });
 
   onUnmounted(() => {

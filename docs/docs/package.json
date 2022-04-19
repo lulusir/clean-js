@@ -31,7 +31,7 @@
     "@babel/preset-typescript": "^7.16.5",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/react-hooks": "^8.0.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/clone": "^2.1.1",
     "@types/jest": "^27.0.3",
@@ -54,7 +54,6 @@
     "jest": "^27.4.5",
     "jest-coverage-badges": "^1.1.2",
     "lint-staged": "^10.0.7",
-    "np": "^7.6.0",
     "prettier": "^2.5.1",
     "react-dom": "^17.0.2",
     "react-test-renderer": "^17.0.2",
@@ -70,9 +69,9 @@
   },
   "dependencies": {
     "@routine-js/upload-image": "~0.0.12",
-    "react": ">=16.8.0",
-    "@clean-js/presenter": "0.0.7",
-    "@clean-js/react-presenter": "0.0.7",
+    "react": "16.14.0",
+    "@clean-js/presenter": "workspace:*",
+    "@clean-js/react-presenter": "workspace:*",
     "reflect-metadata": "0.1.13",
     "@routine-js/table": "~0.0.10"
   }

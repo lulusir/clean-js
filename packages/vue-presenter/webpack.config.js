@@ -29,7 +29,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   externals: {
-    react: 'react',
+    vue: 'vue',
     '@clean-js/presenter': '@clean-js/presenter',
   },
   // devtool: 'source-map',
@@ -42,7 +42,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
     library: {
-      name: '@clean-js/react-presenter',
+      name: '@clean-js/vue-presenter',
       type: 'umd',
     },
     // environment: { module: true },

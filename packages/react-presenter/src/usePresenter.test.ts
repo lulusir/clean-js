@@ -49,12 +49,9 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
+
       return usePresenter<P>(P);
     });
-    expect(count).toBe(1);
-    // act(() => {
-    //   result.current.presenter.updateView();
-    // });
     expect(count).toBe(1);
   });
 
