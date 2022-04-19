@@ -27,8 +27,8 @@
     "react-dom": "^17.0.2",
     "umi": "^3.5.20",
     "@routine-js/table": "~0.0.9",
-    "@clean-js/presenter": "0.0.5",
-    "@clean-js/react-presenter": "0.0.5",
+    "@clean-js/presenter": "0.0.6",
+    "@clean-js/react-presenter": "0.0.6",
     "antd": "4.16.13"
   },
   "devDependencies": {

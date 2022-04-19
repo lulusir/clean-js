@@ -1,6 +1,13 @@
 # Change Log - @clean-js/presenter
 
-This log was last generated on Tue, 08 Feb 2022 13:51:50 GMT and should not be manually modified.
+This log was last generated on Tue, 19 Apr 2022 04:17:46 GMT and should not be manually modified.
+
+## 0.0.6
+Tue, 19 Apr 2022 04:17:46 GMT
+
+### Updates
+
+- add presenter of vue
 
 ## 0.0.5
 Tue, 08 Feb 2022 13:51:50 GMT
