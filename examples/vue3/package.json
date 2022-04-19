@@ -12,7 +12,7 @@
     "vue": "~3.2.31",
     "@clean-js/vue-presenter": "workspace:*",
     "@clean-js/presenter": "workspace:*",
-    "@routine-js/table": "~0.0.9",
+    "@routine-js/table": "~0.0.10",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
