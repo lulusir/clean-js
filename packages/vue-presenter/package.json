@@ -50,6 +50,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "father-build": "~1.20.1",
     "jest": "^27.4.5",
     "lint-staged": "^10.0.7",
     "prettier": "^2.5.1",
@@ -64,7 +65,6 @@
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
-    "father-build": "~1.20.1",
     "yorkie": "^2.0.0"
   },
   "dependencies": {

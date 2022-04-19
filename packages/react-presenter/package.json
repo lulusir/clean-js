@@ -70,8 +70,8 @@
   },
   "dependencies": {
     "@clean-js/presenter": "workspace:*",
-    "use-sync-external-store": "^1.0.0",
-    "@types/use-sync-external-store": "^0.0.3"
+    "@types/use-sync-external-store": "^0.0.3",
+    "use-sync-external-store": "^1.0.0"
   },
   "peerDependencies": {
     "react": "16.14.0"
