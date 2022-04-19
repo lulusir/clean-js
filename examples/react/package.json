@@ -1,5 +1,5 @@
 {
-  "name":"example-react",
+  "name": "example-react",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -26,9 +26,9 @@
     "react": ">=16.8.0",
     "react-dom": "^17.0.2",
     "umi": "^3.5.20",
-    "@routine-js/table": "~0.0.9",
-    "@clean-js/presenter": "0.0.7",
-    "@clean-js/react-presenter": "0.0.7",
+    "@routine-js/table": "~0.0.10",
+    "@clean-js/presenter": "workspace:*",
+    "@clean-js/react-presenter": "0.0.6",
     "antd": "4.16.13"
   },
   "devDependencies": {

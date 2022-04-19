@@ -12,7 +12,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "webpack --env production ",
+    "build": " LERNA=none father-build",
     "start": "webpack --watch ",
     "test": "jest --watch"
   },
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.5",
     "@babel/plugin-proposal-decorators": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
@@ -50,6 +51,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "father-build": "~1.20.1",
     "jest": "^27.4.5",
     "lint-staged": "^10.0.7",
     "prettier": "^2.5.1",

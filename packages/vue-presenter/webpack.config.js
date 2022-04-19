@@ -6,12 +6,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
   entry: './src/index.ts',
   // plugins: [new BundleAnalyzerPlugin()],
-  mode: 'production',
+  // mode: 'development',
   optimization: {
     minimize: true,
     minimizer: [
       new TerserPlugin({
-        extractComments: false,
+        extractComments: true,
       }),
     ],
   },

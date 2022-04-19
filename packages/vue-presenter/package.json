@@ -11,7 +11,7 @@
     "dist"
   ],
   "scripts": {
-    "build": " ",
+    "build": "father-build",
     "start": "webpack --watch ",
     "test": "jest --watch"
   },
@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.5",
     "@babel/plugin-proposal-decorators": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
@@ -64,6 +65,7 @@
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
+    "father-build": "~1.20.1",
     "yorkie": "^2.0.0"
   },
   "dependencies": {
