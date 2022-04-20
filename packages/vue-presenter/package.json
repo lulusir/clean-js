@@ -2,7 +2,7 @@
   "name": "@clean-js/vue-presenter",
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "react adaptor",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -68,7 +68,7 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@clean-js/presenter": "0.0.8",
+    "@clean-js/presenter": "workspace:*",
     "jest-environment-jsdom": "~27.5.1",
     "vue": "~3.2.33"
   }

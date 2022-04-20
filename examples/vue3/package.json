@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "vue": "~3.2.33",
-    "@clean-js/vue-presenter": "0.0.8",
-    "@clean-js/presenter": "0.0.8",
+    "@clean-js/vue-presenter": "workspace:*",
+    "@clean-js/presenter": "workspace:*",
     "@routine-js/table": "~0.0.10",
     "reflect-metadata": "0.1.13"
   },

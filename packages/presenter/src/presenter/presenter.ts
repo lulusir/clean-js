@@ -5,6 +5,7 @@ import { uniqueID } from '../utils/index';
 import { devtools } from '../utils/devtool';
 
 const emitter = new EventEmitter();
+// todo 需要一个id 池
 
 interface UpdateFn<S> {
   (state: S): void;
