@@ -2,7 +2,7 @@
   "name": "@clean-js/presenter",
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Front-end clean architecture",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,7 +14,7 @@
     "docs:start": "dumi dev",
     "docs:build": "dumi build",
     "deploy": " npm run docs:build && gh-pages -d dist",
-    "build": "webpack --env production ",
+    "build": "LERNA=none father-build ",
     "start": "webpack --watch ",
     "test": "jest",
     "test:badges": "jest --coverage && jest-coverage-badges"
@@ -28,7 +28,10 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "15.1.0",
+    "father-build": "~1.20.1",
     "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.5",
     "@babel/plugin-proposal-decorators": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",

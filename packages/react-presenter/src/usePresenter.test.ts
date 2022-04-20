@@ -11,9 +11,15 @@ interface IViewState {
   obj: Record<any, any>;
 }
 
+class Service {
+  fetch() {
+    return 'data'
+  }
+}
+
 @injectable()
 class P extends Presenter<IViewState> {
-  constructor() {
+  constructor(protected service :Service) {
     super();
     this.state = {
       name: 'lujs',
@@ -41,6 +47,13 @@ class P extends Presenter<IViewState> {
 
   changeNameWith(obj: IViewState) {
     this.setState(obj);
+  }
+
+  fetchServiceName() {
+    const name =this.service.fetch()
+    this.setState(s => {
+      s.name = name
+    })
   }
 }
 
@@ -334,3 +347,21 @@ describe('registry', () => {
     expect(count).toBe(2);
   });
 });
+
+
+describe('inject', () => {
+  it('fetchServiceName', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+      return usePresenter(P);
+    });
+    expect(count).toBe(1)
+
+    act(() => {
+      result.current.presenter.fetchServiceName()
+    })
+    expect(count).toBe(2)
+
+  })
+})
