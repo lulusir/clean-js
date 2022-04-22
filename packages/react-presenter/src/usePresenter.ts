@@ -29,15 +29,13 @@ export function usePresenter<P>(
   Cls: Constructor<H<P>>,
   options = DefaultUsePresenterOptions,
 ) {
-  const opt = useMemo(
-    () => ({
+  const presenter = useMemo(() => {
+    const opt = {
       ...DefaultUsePresenterOptions,
       ...options,
-    }),
-    [options],
-  );
-
-  const presenter = useMemo(() => getInstance<P>(Cls, opt), [Cls, opt]);
+    };
+    return getInstance<P>(Cls, opt);
+  }, []);
 
   const state = useSyncExternalStore(
     (...args) => {
