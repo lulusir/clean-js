@@ -2,7 +2,7 @@
   "name": "@clean-js/presenter",
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Front-end clean architecture",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
