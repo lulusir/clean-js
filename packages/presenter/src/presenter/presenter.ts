@@ -1,11 +1,10 @@
 // import cloneDeep from 'clone';
 import EventEmitter from 'eventemitter3';
+import { nanoid } from 'nanoid';
 import produce, { freeze } from 'immer';
-import { uniqueID } from '../utils/index';
 import { devtools } from '../utils/devtool';
 
 const emitter = new EventEmitter();
-// todo 需要一个id 池
 
 interface UpdateFn<S> {
   (state: S): void;
@@ -14,7 +13,7 @@ interface UpdateFn<S> {
 export abstract class Presenter<S> {
   private _state!: S;
 
-  private id = uniqueID();
+  private id = nanoid();
 
   get state(): S {
     if (this._state === undefined) {
@@ -60,10 +59,6 @@ export abstract class Presenter<S> {
     };
   }
 
-  // updateView() {
-  //   throw Error('Please use adapter to bind view');
-  // }
-
   __init() {
     devtools.init(this.state, this.constructor.name);
   }
@@ -71,14 +66,4 @@ export abstract class Presenter<S> {
   __destroy() {
     devtools.remove(this.constructor.name);
   }
-
-  // __useAutoUpdate() {
-  //   const { unsubscribe } = this.subscribe(() => {
-  //     this.updateView();
-  //   });
-
-  //   return {
-  //     unsubscribe,
-  //   };
-  // }
 }

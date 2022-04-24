@@ -7,6 +7,7 @@ export default {
     'eventemitter3',
     'immer',
     'reflect-metadata',
+    'nanoid',
   ],
   // 增加这个配置
   extraRollupPlugins: [commonjs()],
