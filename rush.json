@@ -51,27 +51,18 @@
     {
       "packageName": "@clean-js/presenter",
       "projectFolder": "packages/presenter",
-      "cyclicDependencyProjects": [
-        "@clean-js/react-presenter"
-      ],
       "versionPolicyName": "presenter",
       "shouldPublish": true
     },
     {
       "packageName": "@clean-js/react-presenter",
       "projectFolder": "packages/react-presenter",
-      "cyclicDependencyProjects": [
-        "@clean-js/presenter"
-      ],
       "versionPolicyName": "presenter",
       "shouldPublish": true
     },
     {
       "packageName": "@clean-js/vue-presenter",
       "projectFolder": "packages/vue-presenter",
-      "cyclicDependencyProjects": [
-        "@clean-js/presenter"
-      ],
       "versionPolicyName": "presenter",
       "shouldPublish": false
     },
@@ -79,7 +70,8 @@
       "packageName": "docs",
       "projectFolder": "docs/docs",
       "cyclicDependencyProjects": [
-        "@clean-js/presenter",  "@clean-js/react-presenter"
+        "@clean-js/presenter",
+        "@clean-js/react-presenter"
       ],
       "shouldPublish": false
     },
@@ -87,7 +79,8 @@
       "packageName": "example-react",
       "projectFolder": "examples/react",
       "cyclicDependencyProjects": [
-        "@clean-js/presenter",  "@clean-js/react-presenter"
+        "@clean-js/presenter",
+        "@clean-js/react-presenter"
       ],
       "shouldPublish": false
     },
@@ -95,7 +88,8 @@
       "packageName": "example-vue3",
       "projectFolder": "examples/vue3",
       "cyclicDependencyProjects": [
-        "@clean-js/presenter",  "@clean-js/vue-presenter"
+        "@clean-js/presenter",
+        "@clean-js/vue-presenter"
       ],
       "shouldPublish": false
     }

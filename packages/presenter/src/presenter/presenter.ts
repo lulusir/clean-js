@@ -1,7 +1,8 @@
 // import cloneDeep from 'clone';
 import EventEmitter from 'eventemitter3';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import produce, { freeze } from 'immer';
+import { uniqueID } from '../utils';
 import { devtools } from '../utils/devtool';
 
 const emitter = new EventEmitter();
@@ -13,7 +14,7 @@ interface UpdateFn<S> {
 export abstract class Presenter<S> {
   private _state!: S;
 
-  private id = nanoid();
+  private id = uniqueID();
 
   get state(): S {
     if (this._state === undefined) {
