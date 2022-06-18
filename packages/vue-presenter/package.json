@@ -12,7 +12,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack --watch ",
-    "test": "jest --watch"
+    "test": ""
   },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [

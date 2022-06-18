@@ -14,7 +14,6 @@ class Devtool {
   showLog: boolean = false;
 
   connect() {
-    // console.log(config.useDevTool, 'extension');
     // eslint-disable-next-line no-underscore-dangle
     const extension = (window as any)?.__REDUX_DEVTOOLS_EXTENSION__;
 
@@ -31,6 +30,8 @@ class Devtool {
   }
 
   init(state: any, modelName: string) {
+    this.store[modelName] = state;
+
     if (!entry.useDevTool) {
       return;
     }
@@ -39,7 +40,6 @@ class Devtool {
       return;
     }
 
-    this.store[modelName] = state;
     this.instance.send(
       {
         type: `[${modelName}]:initState`,
@@ -94,6 +94,8 @@ class Devtool {
   }
 
   remove(modelName: string) {
+    delete this.store[modelName];
+
     if (!entry.useDevTool) {
       return;
     }
@@ -101,8 +103,6 @@ class Devtool {
     if (this.instance === null) {
       return;
     }
-
-    delete this.store[modelName];
 
     this.instance.send(
       {
