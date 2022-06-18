@@ -53,7 +53,7 @@ const Page = () => {
       title: 'Name',
       dataIndex: 'name',
       key: 'name',
-      render: (text:string) => <a>{text}</a>,
+      render: (text: string) => <a>{text}</a>,
     },
   ];
 

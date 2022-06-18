@@ -191,6 +191,7 @@ importers:
       '@types/clone': ^2.1.1
       '@types/jest': ^27.0.3
       '@types/lodash.clonedeep': ^4.5.6
+      '@types/remote-redux-devtools': 0.5.0
       '@typescript-eslint/eslint-plugin': ^5.8.0
       '@typescript-eslint/parser': ^5.8.0
       antd: 4.16.13
@@ -214,6 +215,7 @@ importers:
       nanoid: ~3.3.3
       prettier: ^2.5.1
       reflect-metadata: 0.1.13
+      remote-redux-devtools: 0.5.0
       terser-webpack-plugin: ^5.3.0
       ts-jest: ^27.1.2
       ts-loader: ^9.2.6
@@ -242,6 +244,7 @@ importers:
       '@types/clone': registry.npmmirror.com/@types/clone/2.1.1
       '@types/jest': registry.npmmirror.com/@types/jest/27.4.1
       '@types/lodash.clonedeep': registry.npmmirror.com/@types/lodash.clonedeep/4.5.7
+      '@types/remote-redux-devtools': 0.5.0
       '@typescript-eslint/eslint-plugin': registry.npmmirror.com/@typescript-eslint/eslint-plugin/5.20.0_b9ac9b5656ce5dffade639fcf5e491bf
       '@typescript-eslint/parser': registry.npmmirror.com/@typescript-eslint/parser/5.20.0_eslint@8.13.0+typescript@4.6.3
       antd: registry.npmmirror.com/antd/4.16.13
@@ -261,6 +264,7 @@ importers:
       jest-coverage-badges: registry.npmmirror.com/jest-coverage-badges/1.1.2
       lint-staged: registry.npmmirror.com/lint-staged/10.5.4
       prettier: registry.npmmirror.com/prettier/2.6.2
+      remote-redux-devtools: 0.5.0
       terser-webpack-plugin: registry.npmmirror.com/terser-webpack-plugin/5.3.1_webpack@5.72.0
       ts-jest: registry.npmmirror.com/ts-jest/27.1.4_e5fb0852f9419ae84240799a2f4ee178
       ts-loader: registry.npmmirror.com/ts-loader/9.2.8_typescript@4.6.3+webpack@5.72.0
@@ -463,11 +467,160 @@ importers:
 
 packages:
 
+  /@types/remote-redux-devtools/0.5.0:
+    resolution: {integrity: sha512-POvN4b7QvF+uliZsuOAbpNOxBBNZ5diyhgaAPGjM2jsWAjwNYCYaMFMbnRQfEQAoESlEV8vcF7SCYW9o+YWenw==}
+    dependencies:
+      redux: 3.7.2
+    dev: true
+
+  /base-64/0.1.0:
+    resolution: {integrity: sha512-Y5gU45svrR5tI2Vt/X9GPd3L0HNIKzGu202EjxrXMpuc2V2CiKgemAbUUsqYmZJvPtCXoUKjNZwBJzsNScUbXA==}
+    dev: true
+
+  /component-emitter/1.2.0:
+    resolution: {integrity: sha512-U8EviusIm8Fc5vMbs9opNX8r/hAz8PFYOu003AR1OVkCnDSTaBHB8inMn97yIbkGlI+dcdsItTBjgiZkVVzxYg==}
+    dev: true
+
+  /cycle/1.0.3:
+    resolution: {integrity: sha512-TVF6svNzeQCOpjCqsy0/CSy8VgObG3wXusJ73xW2GbG5rGx7lC8zxDSURicsXI2UsGdi2L0QNRCi745/wUDvsA==}
+    engines: {node: '>=0.4.0'}
+    dev: true
+
+  /get-params/0.1.2:
+    resolution: {integrity: sha512-41eOxtlGgHQRbFyA8KTH+w+32Em3cRdfBud7j67ulzmIfmaHX9doq47s0fa4P5o9H64BZX9nrYI6sJvk46Op+Q==}
+    dev: true
+
+  /js-tokens/4.0.0:
+    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    dev: true
+
+  /jsan/3.1.14:
+    resolution: {integrity: sha512-wStfgOJqMv4QKktuH273f5fyi3D3vy2pHOiSDGPvpcS/q+wb/M7AK3vkCcaHbkZxDOlDU/lDJgccygKSG2OhtA==}
+    dev: true
+
+  /linked-list/0.1.0:
+    resolution: {integrity: sha512-Zr4ovrd0ODzF3ut2TWZMdHIxb8iFdJc/P3QM4iCJdlxxGHXo69c9hGIHzLo8/FtuR9E6WUZc5irKhtPUgOKMAg==}
+    dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: true
+
+  /lodash/4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
+    dev: true
+
+  /loose-envify/1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
+    dev: true
+
   /nanoid/3.3.3:
     resolution: {integrity: sha512-p1sjXuopFs0xg+fPASzQ28agW1oHD7xDsd9Xkf3T15H3c/cifrFHVwrh74PdoklAPi+i7MdRsE47vm2r6JoB+w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: false
+
+  /options/0.0.6:
+    resolution: {integrity: sha512-bOj3L1ypm++N+n7CEbbe473A414AB7z+amKYshRb//iuL3MpdDCLhPnw6aVTdKB9g5ZRVHIEp8eUln6L2NUStg==}
+    engines: {node: '>=0.4.0'}
+    dev: true
+
+  /querystring/0.2.0:
+    resolution: {integrity: sha512-X/xY82scca2tau62i9mDyU9K+I+djTMUsvwf7xnUX5GLvVzgJybOJf4Y6o9Zx3oJK/LSXg5tTZBjwzqVPaPO2g==}
+    engines: {node: '>=0.4.x'}
+    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
+    dev: true
+
+  /redux-devtools-instrument/1.10.0:
+    resolution: {integrity: sha512-X8JRBCzX2ADSMp+iiV7YQ8uoTNyEm0VPFPd4T854coz6lvRiBrFSqAr9YAS2n8Kzxx8CJQotR0QF9wsMM+3DvA==}
+    deprecated: Package moved to @redux-devtools/instrument.
+    peerDependencies:
+      redux: ^3.4.0 || ^4.0.0
+    dependencies:
+      lodash: 4.17.21
+      symbol-observable: 1.2.0
+    dev: true
+
+  /redux/3.7.2:
+    resolution: {integrity: sha512-pNqnf9q1hI5HHZRBkj3bAngGZW/JMCmexDlOxw4XagXY2o1327nHH54LoTjiPJ0gizoqPDRqWyX/00g0hD6w+A==}
+    dependencies:
+      lodash: 4.17.21
+      lodash-es: 4.17.21
+      loose-envify: 1.4.0
+      symbol-observable: 1.2.0
+    dev: true
+
+  /remote-redux-devtools/0.5.0:
+    resolution: {integrity: sha512-sM1M3nds10ExI/0UX1BhK3XCrQxspz3WAH4JXGt4525eOoQR3SRTS0p0NQITH4cR4HLUHHnyZN8HKnG7y2l/VA==}
+    dependencies:
+      jsan: 3.1.14
+      querystring: 0.2.0
+      redux-devtools-instrument: 1.10.0
+      remotedev-utils: 0.0.5
+      socketcluster-client: 4.3.19
+    transitivePeerDependencies:
+      - redux
+    dev: true
+
+  /remotedev-utils/0.0.5:
+    resolution: {integrity: sha512-XrIKue375htaJNx7947ONI70E9YfMkburZQZy8mlIq7GU/jYYtDcYnPNLZAEjy8L3UBrLgrmSFMnqFhh6h0E9g==}
+    dependencies:
+      get-params: 0.1.2
+      lodash: 4.17.21
+    dev: true
+
+  /sc-channel/1.0.6:
+    resolution: {integrity: sha512-vXhuJ4GZeOulBjLrKpbVhxyBz4YSqgRdc9m1jaR1byZfwyexarb7xCSe5/A0V42XGjCJ3/FR7wa8UEBtL9xOxg==}
+    dependencies:
+      sc-emitter: 1.0.1
+    dev: true
+
+  /sc-emitter/1.0.1:
+    resolution: {integrity: sha512-wJkaqftDoBbAZcFrYxM9s9rzlLorSv2SDTiGkK1KmVy0JV/4dkrzN1BC485bqAaRf2Q59KuteTizglV5U9toqA==}
+    dependencies:
+      component-emitter: 1.2.0
+    dev: true
+
+  /sc-errors/1.0.6:
+    resolution: {integrity: sha512-J9MwO9ntz8U2ngNGMjjLHoj9frC4sazqsKndVNpOWjRyiuUpluAPUZ6Tw55FBIiSV8tPLGywD76fuJr43lrC9Q==}
+    dependencies:
+      cycle: 1.0.3
+    dev: true
+
+  /sc-formatter/1.0.4:
+    resolution: {integrity: sha512-DspK8gHDGBdjrQ011iL+SFnShjvGpoEaTpFHZO2fCuFBC8uTcANxNmjgyYdBjbY09/YB3gH4ip6Lm2fvXXMmbA==}
+    dev: true
+
+  /sc-ws/1.0.2:
+    resolution: {integrity: sha512-hNzl612mjG/fc8zwktFyosgmfL/YXVYWO4x90rB23c7Zo60F8lnTDBJYconKcnPRazOrfUo6XGEA5+tilQLXZw==}
+    dependencies:
+      options: 0.0.6
+      ultron: 1.0.2
+    dev: true
+
+  /socketcluster-client/4.3.19:
+    resolution: {integrity: sha512-43O9dXcIRdjZ5QgPz1Gg0Ta+8uo1ZgjQHyYRmOOGIrr+OhI4d2+qTGIFp8FcP2cZZKiG0NrhK60qeCUl9CqduQ==}
+    dependencies:
+      base-64: 0.1.0
+      linked-list: 0.1.0
+      sc-channel: 1.0.6
+      sc-emitter: 1.0.1
+      sc-errors: 1.0.6
+      sc-formatter: 1.0.4
+      sc-ws: 1.0.2
+    dev: true
+
+  /symbol-observable/1.2.0:
+    resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  /ultron/1.0.2:
+    resolution: {integrity: sha512-QMpnpVtYaWEeY+MwKDN/UdKlE/LsFZXM5lO1u7GaZzNgmIbGixHEmVMIKT+vqYOALu3m5GYQy9kz4Xu4IVn7Ow==}
+    dev: true
 
   registry.npmmirror.com/@ahooksjs/use-request/2.8.15_react@16.14.0:
     resolution: {integrity: sha512-xhVaM4fyIiAMdVFuuU5i3CFUdFa/IblF+fvITVMFaUEO3w/V5tVCAF6WIA3T03n1/RPuzRkA7Ao1PFtSGtGelw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@ahooksjs/use-request/-/use-request-2.8.15.tgz}

@@ -1,11 +1,17 @@
 import { entry } from '../entry/entry';
 
+const colors = {
+  prevState: '#FFC18F',
+  nextState: '#FFD666',
+};
 class Devtool {
   name = '@clean-js/presenter';
 
   store: Record<any, any> = {};
 
   instance: any = null;
+
+  showLog: boolean = false;
 
   connect() {
     // console.log(config.useDevTool, 'extension');
@@ -43,7 +49,32 @@ class Devtool {
     );
   }
 
+  logPrev(state: any, color: string) {
+    const styles = `color: ${color}; font-weight: bold`;
+
+    console.log('%c PrevState    ', styles, state);
+  }
+
+  logNext(state: any, color: string) {
+    const styles = `color: ${color}; font-weight: bold`;
+
+    console.log('%c NextState    ', styles, state);
+  }
+
+  log(state: any, modelName: string) {
+    console.group('[Model]: ', modelName);
+    this.logPrev(this.store[modelName], colors.prevState);
+    this.logNext(state, colors.nextState);
+    console.groupEnd();
+  }
+
   send(state: any, modelName: string) {
+    if (this.showLog) {
+      this.log(state, modelName);
+    }
+
+    this.store[modelName] = state;
+
     if (!entry.useDevTool) {
       return;
     }
@@ -53,7 +84,6 @@ class Devtool {
       return;
     }
 
-    this.store[modelName] = state;
     this.instance.send(
       {
         type: `[${modelName}]:setState`,

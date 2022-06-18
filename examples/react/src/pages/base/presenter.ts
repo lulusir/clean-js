@@ -1,5 +1,6 @@
-import { Presenter, injectable } from '@clean-js/presenter';
+import { Presenter, injectable ,entry} from '@clean-js/presenter';
 
+entry.init({ useDevTool: true });
 interface IViewState {
   loading: boolean;
   name: string;
@@ -19,6 +20,5 @@ export class NamePresenter extends Presenter<IViewState> {
     this.setState((s) => {
       s.name += '!';
     }); // api of set model state
-    this.updateView(); // api of update view
   }
 }

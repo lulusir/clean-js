@@ -7,6 +7,10 @@ class Entry {
     this.useDevTool = useDevTool;
     devtools.connect();
   }
+
+  showLog() {
+    devtools.showLog = true;
+  }
 }
 
 export const entry = new Entry();
