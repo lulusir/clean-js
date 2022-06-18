@@ -2,7 +2,7 @@
   "name": "@clean-js/react-presenter",
   "author": "lujs",
   "license": "MIT",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "react adaptor",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -63,7 +63,7 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@clean-js/presenter": "0.0.16",
+    "@clean-js/presenter": "workspace:*",
     "@types/use-sync-external-store": "^0.0.3",
     "use-sync-external-store": "^1.0.0"
   },
