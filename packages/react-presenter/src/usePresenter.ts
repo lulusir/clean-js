@@ -8,9 +8,9 @@ type IViewState<P> = H<P>['state'];
 
 type EqualityFn<State> = (a: State, b: State) => boolean;
 
-type SelectorFn<State = unknown, > = (s: State) => any;
+type SelectorFn<State = unknown> = (s: State) => any;
 
-const defaultEqualityFn: EqualityFn<any> = (a, b) => Object.is(a,b);
+const defaultEqualityFn: EqualityFn<any> = (a, b) => Object.is(a, b);
 
 const defaultSelector: SelectorFn<any> = (s) => s;
 
@@ -26,7 +26,7 @@ export const DefaultUsePresenterOptions: IUsePresenterOptions = Object.freeze({
 
 const getInstance = <P>(
   Cls: Constructor<H<P>>,
-  options?: IUsePresenterOptions<IViewState<P>>
+  options?: IUsePresenterOptions<IViewState<P>>,
 ) => {
   if (options?.registry?.length) {
     options.registry.forEach((v) => {
@@ -38,7 +38,7 @@ const getInstance = <P>(
 
 export function usePresenter<P>(
   Cls: Constructor<H<P>>,
-  options:IUsePresenterOptions<IViewState<P>> = DefaultUsePresenterOptions,
+  options: IUsePresenterOptions<IViewState<P>> = DefaultUsePresenterOptions,
 ) {
   const presenter = useMemo(() => {
     const opt = {
