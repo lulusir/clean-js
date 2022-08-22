@@ -2,6 +2,12 @@
   "name": "@clean-js/presenter",
   "entries": [
     {
+      "version": "0.0.18",
+      "tag": "@clean-js/presenter_v0.0.18",
+      "date": "Mon, 22 Aug 2022 06:57:32 GMT",
+      "comments": {}
+    },
+    {
       "version": "0.0.17",
       "tag": "@clean-js/presenter_v0.0.17",
       "date": "Sat, 18 Jun 2022 14:59:30 GMT",
