@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable max-classes-per-file */
@@ -6,24 +7,35 @@ import { renderHook, act } from '@testing-library/react-hooks';
 import { Presenter, injectable, inject } from '@clean-js/presenter';
 import { usePresenter } from './usePresenter';
 
+const deepEqual = (a: any, b: any) => JSON.stringify(a) === JSON.stringify(b);
 interface IViewState {
   name: string;
   obj: Record<any, any>;
+  a: {
+    b: {
+      c: number;
+    };
+  };
 }
 
 class Service {
   fetch() {
-    return 'data'
+    return 'data';
   }
 }
 
 @injectable()
 class P extends Presenter<IViewState> {
-  constructor(protected service :Service) {
+  constructor(protected service: Service) {
     super();
     this.state = {
       name: 'lujs',
       obj: {},
+      a: {
+        b: {
+          c: 123,
+        },
+      },
     };
   }
 
@@ -50,10 +62,16 @@ class P extends Presenter<IViewState> {
   }
 
   fetchServiceName() {
-    const name =this.service.fetch()
-    this.setState(s => {
-      s.name = name
-    })
+    const name = this.service.fetch();
+    this.setState((s) => {
+      s.name = name;
+    });
+  }
+
+  updateDeep() {
+    this.setState((s) => {
+      s.a.b.c += 1;
+    });
   }
 }
 
@@ -129,7 +147,15 @@ describe('should increment counter', () => {
     });
     expect(count).toBe(1);
     act(() => {
-      result.current.presenter.changeNameWith({ name: 'lujs', obj: {} });
+      result.current.presenter.changeNameWith({
+        name: 'lujs',
+        obj: {},
+        a: {
+          b: {
+            c: 123,
+          },
+        },
+      });
     });
     expect(count).toBe(2);
   });
@@ -235,7 +261,15 @@ describe('auto update, should increment counter', () => {
     });
     expect(count).toBe(1);
     act(() => {
-      result.current.presenter.changeNameWith({ name: 'lujs', obj: {} });
+      result.current.presenter.changeNameWith({
+        name: 'lujs',
+        obj: {},
+        a: {
+          b: {
+            c: 123,
+          },
+        },
+      });
     });
     expect(count).toBe(2);
   });
@@ -278,6 +312,11 @@ describe('registry', () => {
         this.state = {
           name: 'lujs',
           obj: {},
+          a: {
+            b: {
+              c: 123,
+            },
+          },
         };
       }
 
@@ -313,6 +352,11 @@ describe('registry', () => {
         this.state = {
           name: 'lujs',
           obj: {},
+          a: {
+            b: {
+              c: 123,
+            },
+          },
         };
       }
 
@@ -348,7 +392,6 @@ describe('registry', () => {
   });
 });
 
-
 describe('inject', () => {
   it('fetchServiceName', () => {
     let count = 0;
@@ -356,12 +399,171 @@ describe('inject', () => {
       count += 1;
       return usePresenter(P);
     });
-    expect(count).toBe(1)
+    expect(count).toBe(1);
 
     act(() => {
-      result.current.presenter.fetchServiceName()
-    })
-    expect(count).toBe(2)
+      result.current.presenter.fetchServiceName();
+    });
+    expect(count).toBe(2);
+  });
+});
 
-  })
-})
+describe('selector and equal', () => {
+  it('1: with selector, update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        selector: (s) => s.a.b.c,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+    expect(result.current.presenter.state.a.b.c).toBe(123);
+
+    result.current.presenter.updateDeep();
+    expect(count).toBe(2);
+    expect(result.current.presenter.state.a.b.c).toBe(124);
+  });
+
+  it('1: with selector, not update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        selector: (s) => s.a.b.c,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+    expect(result.current.presenter.state.a.b.c).toBe(123);
+
+    result.current.presenter.changeName();
+    expect(count).toBe(1);
+  });
+
+  it('1: right selector, update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        selector: (s) => s.name,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+    expect(result.current.presenter.state.a.b.c).toBe(123);
+
+    result.current.presenter.changeName();
+    expect(count).toBe(2);
+  });
+
+  it('2: deep equal, update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        equalityFn: deepEqual,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+
+    result.current.presenter.changeName();
+    expect(count).toBe(2);
+  });
+
+  it('2: deep equal, not update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        equalityFn: deepEqual,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+
+    result.current.presenter.setState((s) => {
+      s.obj = {};
+    });
+    expect(count).toBe(1);
+  });
+
+  it('2: default equal,  update,', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {});
+      return res;
+    });
+    expect(count).toBe(1);
+
+    result.current.presenter.setState((s) => {
+      s.obj = {};
+    });
+    expect(count).toBe(2);
+  });
+
+  it('3: selector and equal fn, not update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        selector: (s) => s.obj,
+        equalityFn: deepEqual,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+
+    result.current.presenter.setState((s) => {
+      s.obj = {};
+    });
+    expect(count).toBe(1);
+  });
+
+  it('3: selector and equal fn, update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        selector: (s) => s.obj,
+        equalityFn: (a, b) => a === b,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+
+    result.current.presenter.setState((s) => {
+      s.obj = {};
+    });
+    expect(count).toBe(2);
+  });
+  it('3: selector and equal fn, update', () => {
+    let count = 0;
+    const { result } = renderHook(() => {
+      count += 1;
+
+      const res = usePresenter<P>(P, {
+        selector: (s) => s.obj,
+        equalityFn: (a, b) => a === b,
+      });
+      return res;
+    });
+    expect(count).toBe(1);
+
+    result.current.presenter.setState((s) => {
+      s.name += '1';
+    });
+    expect(count).toBe(1);
+  });
+});
