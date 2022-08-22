@@ -1,6 +1,6 @@
 import { container } from '@clean-js/presenter';
-import { useEffect, useRef, useState, useMemo } from 'react';
-import { useSyncExternalStore } from 'use-sync-external-store/shim';
+import { useEffect, useMemo } from 'react';
+// import { useSyncExternalStore } from 'use-sync-external-store/shim';
 import { useSyncExternalStoreWithSelector } from 'use-sync-external-store/shim/with-selector';
 import { Constructor, H } from './types/interface';
 
@@ -78,7 +78,7 @@ export function usePresenter<P>(
   return {
     presenter,
     state: state as IViewState<P>,
-    P: presenter,
-    S: state,
+    p: presenter,
+    s: state,
   };
 }

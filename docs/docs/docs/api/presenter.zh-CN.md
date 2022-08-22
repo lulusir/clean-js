@@ -13,37 +13,46 @@ nav:
 
 
 ```typescript | pure
-import { Presenter, injectable } from '@clean-js/presenter';
+import { injectable, Presenter } from "@clean-js/presenter";
 
 interface IViewState {
   loading: boolean;
-  name: string
 }
+
+const defaultState: () => IViewState = () => {
+  return {
+    loading: false,
+  };
+};
 
 @injectable()
-export class NamePresenter extends Presenter<IViewState> {
+export class IndexPresenter extends Presenter<IViewState> {
   constructor() {
     super();
-    this.state = {
-      loading: false,
-      name: 'lujs'
-    }
+    this.state = defaultState();
   }
 
-  changeName() {
-    this.setState('aha'); // api of set model state
+  showLoading() {
+    this.setState((s) => {
+      s.loading = true;
+    });
+  }
+  
+  hideLoading() {
+    this.setState((s) => {
+      s.loading = false;
+    });
   }
 }
+
 ```
 
 ## Method
 
 | 参数       | 说明                         | 类型                | 默认值 |
 | ---------- | ---------------------------- | ------------------- | ------ |
-| getState   | 返回 state        | () : Model['state'] |        |
-| updateView | 更新 view 的方法，一般不需要用，由框架自动调用             | () : void           |        |
-| state      | getter 返回 state | getter              |        |
-| setState   |  设置state   | Model['setState']   |        |
+| state      | getter 返回 state | IViewState              |        |
+| setState   |  设置state   | IViewState   |        |
 
 #### PresenterFactor
 

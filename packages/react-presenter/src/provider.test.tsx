@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 
-import { Presenter, injectable } from '@clean-js/presenter';
+import { injectable, Presenter } from '@clean-js/presenter';
 import { render, screen } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 import userEvent from '@testing-library/user-event';
@@ -587,6 +587,7 @@ describe('Component, use auto update', () => {
     expect(screen.getByTestId('ComD-count').innerHTML).toBe('1');
     userEvent.click(screen.getByTestId('change'));
     expect(screen.getByTestId('name').innerHTML).toBe('lujs!');
+    expect(screen.getByTestId('ComC-count').innerHTML).toBe('1');
     expect(screen.getByTestId('ComD-count').innerHTML).toBe('2');
   });
 });

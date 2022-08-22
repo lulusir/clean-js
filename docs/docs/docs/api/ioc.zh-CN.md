@@ -2,7 +2,7 @@
 nav:
   title: API
   path: /api
-  order: 1
+  order: 3
 ---
 
 # IOC
