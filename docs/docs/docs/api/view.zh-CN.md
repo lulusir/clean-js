@@ -64,7 +64,7 @@ function usePresenter<P>(
 | ------------------ | --------------------------------- | -------------------------------------------- | ------ |
 | options.registry   | Presenter 的注册类，用于依赖注入  | { token: any; useClass: Constructor<any> }[] |        |
 | options.equalityFn   | 比较两次state，决定是否要渲染组件 | (prev: State, next: State) => boolean; |     Object.is   |
-| options.selector   | 状态选择器，比如IViewState: {name: string, age: number};  selector: (s) => s.age; 那么只有age变化时，组件才会渲染，并且返回state为s.age   | (s: State) => any; |    s => s    |
+| options.selector   | 状态选择器，比如IViewState: {name: string, age: number};  selector: (s) => s.age; 那么只有age变化时，组件才会渲染   | (s: State) => any; |    s => s    |
 | return.presenter   | 返回的 Presenter 实例             | Presenter                                    |        |
 | return.p   | 返回的 Presenter 实例             | Presenter                                    |        |
 | return.s       | 等同于 Presenter 实例 的 state          | IViewState                            |        |

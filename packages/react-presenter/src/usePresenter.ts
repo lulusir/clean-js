@@ -56,7 +56,7 @@ export function usePresenter<P>(
   //   () => presenter.state,
   // );
 
-  const state = useSyncExternalStoreWithSelector(
+  useSyncExternalStoreWithSelector(
     (...args) => {
       const { unsubscribe } = presenter.subscribe(...args);
       return unsubscribe;
@@ -77,8 +77,8 @@ export function usePresenter<P>(
 
   return {
     presenter,
-    state: state as IViewState<P>,
     p: presenter,
-    s: state,
+    state: presenter.state,
+    s: presenter.state,
   };
 }
