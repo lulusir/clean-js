@@ -78,7 +78,7 @@ export function usePresenter<P>(
   return {
     presenter,
     p: presenter,
-    state: presenter.state,
-    s: presenter.state,
+    state: presenter.state as IViewState<P>,
+    s: presenter.state as IViewState<P>,
   };
 }
