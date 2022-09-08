@@ -1,14 +1,15 @@
 ---
 hero:
-  title: @clean-js/presenter
-  desc: 使用mvp的方式组织代码，实现整洁架构
-  actions:
-    - text: 快速上手
-      link: /getting-started
+  title: @clean-js
+  desc: 使用clean-js织代码，实现整洁架构
+
 
 ---
-## 这是什么？
-围绕整洁架构落地的辅助库, 包含状态库，IOC容器
+## clean-js
+一个包含状态库、IOC容器的辅助库
+- 简单
+- 轻量
+- 方便测试
 ## 功能  
 
 clean-js做了什么？
