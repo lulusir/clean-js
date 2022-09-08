@@ -31,3 +31,12 @@ hero:
 - Presenter, 提供方法和 ViewState 给到 View
 
 - service 实现我们的业务逻辑
+
+## 分层
+
+<img src="https://lulusir.github.io/clean-js/clean-js.png" width = "600"  alt="mvp" align=center />  
+
+- Infrastructures 基础设置层： 一般是Http工具，native功能（jsBridge）等提供基础能力的层级
+- Service: 具体的业务逻辑，也就是Bob大叔提到的Use case和Entity, 因为大多数前端应用都比较简单，有需要的话可以在进一步细分
+- Presenter：提供方法和 State 给到 View，提供视图层需要的方法和数据
+- Adaptor : 绑定Presenter到具体的视图框架（React/Vue/...）
