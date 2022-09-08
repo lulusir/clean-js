@@ -8,6 +8,11 @@ class Entry {
     devtools.connect();
   }
 
+  showDevtool() {
+    this.useDevTool = true;
+    devtools.connect();
+  }
+
   showLog() {
     devtools.showLog = true;
   }
