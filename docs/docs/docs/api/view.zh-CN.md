@@ -2,7 +2,7 @@
 nav:
   title: API
   path: /api
-  order: 1
+  order: 3
 ---
 
 # View adaptor
@@ -60,14 +60,14 @@ function usePresenter<P>(
 };
 ```
 
-| 参数               | 说明                              | 类型                                         | 默认值 |
-| ------------------ | --------------------------------- | -------------------------------------------- | ------ |
-| options.registry   | Presenter 的注册类，用于依赖注入  | { token: any; useClass: Constructor<any> }[] |        |
-| options.equalityFn   | 比较两次state，决定是否要渲染组件 | (prev: State, next: State) => boolean; |     Object.is   |
-| options.selector   | 状态选择器，比如IViewState: {name: string, age: number};  selector: (s) => s.age; 那么只有age变化时，组件才会渲染   | (s: State) => any; |    s => s    |
-| return.presenter   | 返回的 Presenter 实例             | Presenter                                    |        |
-| return.p   | 返回的 Presenter 实例             | Presenter                                    |        |
-| return.s       | 等同于 Presenter 实例 的 state          | IViewState                            |        |
+| 参数               | 说明                                                                                                              | 类型                                         | 默认值    |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | --------- |
+| options.registry   | Presenter 的注册类，用于依赖注入                                                                                  | { token: any; useClass: Constructor<any> }[] |           |
+| options.equalityFn | 比较两次state，决定是否要渲染组件                                                                                 | (prev: State, next: State) => boolean;       | Object.is |
+| options.selector   | 状态选择器，比如IViewState: {name: string, age: number};  selector: (s) => s.age; 那么只有age变化时，组件才会渲染 | (s: State) => any;                           | s => s    |
+| return.presenter   | 返回的 Presenter 实例                                                                                             | Presenter                                    |           |
+| return.p           | 返回的 Presenter 实例                                                                                             | Presenter                                    |           |
+| return.s           | 等同于 Presenter 实例 的 state                                                                                    | IViewState                                   |           |
 
 ## Provider
 
@@ -89,7 +89,6 @@ const ComB = () => {
         data-testid="change"
         onClick={() => {
           presenter.changeName();
-          presenter.updateView();
         }}
       >
         change name

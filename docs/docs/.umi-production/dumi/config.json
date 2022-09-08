@@ -67,6 +67,11 @@
   "navs": {
     "zh-CN": [
       {
+        "title": "API",
+        "path": "/api",
+        "order": 1
+      },
+      {
         "title": "示例",
         "order": 1,
         "path": "/demos"
@@ -75,11 +80,6 @@
         "title": "快速上手",
         "order": 1,
         "path": "/getting-started"
-      },
-      {
-        "title": "API",
-        "path": "/api",
-        "order": 3
       },
       {
         "path": "/ecosystem",

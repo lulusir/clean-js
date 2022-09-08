@@ -2,7 +2,7 @@
 nav:
   title: API
   path: /api
-  order: 3
+  order: 1
 ---
 
 # IOC
@@ -16,7 +16,7 @@ nav:
 1. 需要在 constructor 声明需要注入的类
 2. 用 injectable / singleton 装饰
 
-```typescript | pure
+```typescript
 import { Presenter, injectable, inject } from '@clean-js/presenter';
 
 @injectable()
@@ -27,7 +27,6 @@ export class NamePresenter extends Presenter<NameModel> {
 
   changeName() {
     this.model.setState('aha'); // api of set model state
-    this.updateView(); // api of update view
   }
 }
 ```

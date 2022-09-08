@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory, History } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/@umijs+runtime@3.5.23_react@16.14.0/node_modules/@umijs/runtime';
+import { createBrowserHistory, History } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/registry.npmmirror.com+@umijs+runtime@3.5.23_react@16.14.0/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/clean-js/"

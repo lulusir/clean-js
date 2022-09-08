@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/@umijs+runtime@3.5.23_react@16.14.0/node_modules/@umijs/runtime';
+import { ApplyPluginsType } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/registry.npmmirror.com+@umijs+runtime@3.5.23_react@16.14.0/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 
@@ -12,7 +12,7 @@ export function getRoutes() {
     "wrappers": [require('../dumi/layout').default],
     "component": ((props) => {
         const React = require('react');
-        const { default: getDemoRenderArgs } = require('/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/@umijs+preset-dumi@1.1.40_f59c656d5e1cd36fcdf290a5d0b587cd/node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs');
+        const { default: getDemoRenderArgs } = require('/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/registry.npmmirror.com+@umijs+preset-dumi@1.1.40_f59c656d5e1cd36fcdf290a5d0b587cd/node_modules/@umijs/preset-dumi/lib/plugins/features/demo/getDemoRenderArgs');
         const { default: Previewer } = require('dumi-theme-default/es/builtins/Previewer.js');
         const { usePrefersColor, context } = require('dumi/theme');
 
@@ -55,7 +55,7 @@ export function getRoutes() {
     "__dumiRoot": true,
     "layout": false,
     "path": "/",
-    "wrappers": [require('../dumi/layout').default, require('/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/@umijs+preset-dumi@1.1.40_f59c656d5e1cd36fcdf290a5d0b587cd/node_modules/dumi-theme-default/es/layout.js').default],
+    "wrappers": [require('../dumi/layout').default, require('/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/registry.npmmirror.com+@umijs+preset-dumi@1.1.40_f59c656d5e1cd36fcdf290a5d0b587cd/node_modules/dumi-theme-default/es/layout.js').default],
     "routes": [
       {
         "path": "/getting-started",
@@ -107,7 +107,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/index.zh-CN.md",
-          "updatedTime": 1644936370000,
+          "updatedTime": 1662607364000,
           "slugs": [
             {
               "depth": 2,
@@ -118,6 +118,11 @@ export function getRoutes() {
               "depth": 2,
               "value": "目的",
               "heading": "目的"
+            },
+            {
+              "depth": 2,
+              "value": "分层",
+              "heading": "分层"
             }
           ],
           "title": "整洁架构",
@@ -131,11 +136,11 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/api/ioc.zh-CN.md",
-          "updatedTime": 1644936018000,
+          "updatedTime": 1661160631000,
           "nav": {
             "title": "API",
             "path": "/api",
-            "order": 1
+            "order": 3
           },
           "slugs": [
             {
@@ -165,7 +170,7 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/api/presenter.zh-CN.md",
-          "updatedTime": 1644936018000,
+          "updatedTime": 1661160631000,
           "nav": {
             "title": "API",
             "path": "/api",
@@ -204,11 +209,11 @@ export function getRoutes() {
         "exact": true,
         "meta": {
           "filePath": "docs/api/view.zh-CN.md",
-          "updatedTime": 1644936018000,
+          "updatedTime": 1661218756000,
           "nav": {
             "title": "API",
             "path": "/api",
-            "order": 3
+            "order": 1
           },
           "slugs": [
             {
@@ -458,7 +463,7 @@ export function getRoutes() {
       {
         "path": "/api",
         "meta": {
-          "order": 1
+          "order": 3
         },
         "exact": true,
         "redirect": "/api/ioc"

@@ -3,7 +3,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
+*.umi
+*.umi-production
 # Runtime data
 *.pid
 *.seed

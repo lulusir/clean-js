@@ -4,8 +4,8 @@ import './core/polyfill';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/@umijs+runtime@3.5.23_react@16.14.0/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/@umijs+renderer-react@3.5.23_39566ec7cc5fe716a59f91f7330320ef/node_modules/@umijs/renderer-react';
+import { ApplyPluginsType } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/registry.npmmirror.com+@umijs+runtime@3.5.23_react@16.14.0/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/lujunsheng/myOwnX/clean-js/common/temp/node_modules/.pnpm/registry.npmmirror.com+@umijs+renderer-react@3.5.23_39566ec7cc5fe716a59f91f7330320ef/node_modules/@umijs/renderer-react';
 import { getRoutes } from './core/routes';
 
 

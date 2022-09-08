@@ -18,7 +18,6 @@ export class NamePresenter extends Presenter<IViewState> {
   changeName() {
     this.setState((s) => {
       s.name += '!';
-    }); // api of set model state
-    this.updateView(); // api of update view
+    });
   }
 }

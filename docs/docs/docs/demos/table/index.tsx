@@ -47,6 +47,7 @@ const Page = () => {
       registry: [{ token: TableServiceToken, useClass: MyService }],
     },
   );
+  console.log(presenter);
   return (
     <div>
       <h1>table state</h1>
@@ -54,7 +55,6 @@ const Page = () => {
 
       <button
         onClick={() => {
-          console.log(presenter);
           presenter.getTable();
         }}
       >

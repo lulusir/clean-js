@@ -57,8 +57,7 @@ const Page = () => {
     },
   ];
 
-  const { pagination } = presenter.state.table;
-  const { data } = presenter.state.table;
+  const { pagination, data } = presenter.state;
   return (
     <div>
       <Form
