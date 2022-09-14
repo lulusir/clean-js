@@ -2,6 +2,10 @@
 nav:
   title: API
   path: /api
+  order: 2
+group:
+  title: View adaptor
+  path: /view
   order: 3
 ---
 
@@ -21,25 +25,62 @@ nav:
 ### usage
 
 ```typescript | pure
+import React from 'react';
+
 import { usePresenter } from '@clean-js/react-presenter';
 
-const Name = () => {
-  const { presenter, state } = usePresenter(NamePresenter);
+import { Presenter } from '@clean-js/presenter';
+
+interface IViewState {
+  count: number;
+}
+
+class CounterPresenter extends Presenter<IViewState> {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    };
+  }
+
+  increment = () => {
+    this.setState((s) => {
+      s.count += 1;
+    });
+  };
+
+  decrement = () => {
+    this.setState((s) => {
+      s.count -= 1;
+    });
+  };
+}
+
+const Counter = () => {
+  const { presenter, state } = usePresenter(CounterPresenter);
   return (
     <div>
-      name: {state.name}
-      <button 
+      <p>{state.count}</p>
+      <button
         onClick={() => {
-          presenter.changeName()
+          presenter.increment();
         }}
       >
-        change name
+        increment
+      </button>
+      <button
+        onClick={() => {
+          presenter.decrement();
+        }}
+      >
+        decrement
       </button>
     </div>
   );
 };
 
-export default Name;
+export default Counter;
+
 ```
 
 ### Api
@@ -51,7 +92,6 @@ function usePresenter<P>(
   Cls: P,
   options?: {
     registry?: { token: any; useClass: Constructor<any> }[];
-    selector?: (s: State) => any;
     equalityFn?: (prev: State, next: State) => boolean;
   },
 ): {
@@ -60,14 +100,13 @@ function usePresenter<P>(
 };
 ```
 
-| 参数               | 说明                                                                                                              | 类型                                         | 默认值    |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | --------- |
-| options.registry   | Presenter 的注册类，用于依赖注入                                                                                  | { token: any; useClass: Constructor<any> }[] |           |
-| options.equalityFn | 比较两次state，决定是否要渲染组件                                                                                 | (prev: State, next: State) => boolean;       | Object.is |
-| options.selector   | 状态选择器，比如IViewState: {name: string, age: number};  selector: (s) => s.age; 那么只有age变化时，组件才会渲染 | (s: State) => any;                           | s => s    |
-| return.presenter   | 返回的 Presenter 实例                                                                                             | Presenter                                    |           |
-| return.p           | 返回的 Presenter 实例                                                                                             | Presenter                                    |           |
-| return.s           | 等同于 Presenter 实例 的 state                                                                                    | IViewState                                   |           |
+| 参数               | 说明                              | 类型                                         | 默认值    |
+| ------------------ | --------------------------------- | -------------------------------------------- | --------- |
+| options.registry   | Presenter 的注册类，用于依赖注入  | { token: any; useClass: Constructor<any> }[] |           |
+| options.equalityFn | 比较两次state，决定是否要渲染组件 | (prev: State, next: State) => boolean;       | Object.is |
+| return.presenter   | 返回的 Presenter 实例             | Presenter                                    |           |
+| return.p           | 返回的 Presenter 实例             | Presenter                                    |           |
+| return.s           | 等同于 Presenter 实例 的 state    | IViewState                                   |           |
 
 ## Provider
 

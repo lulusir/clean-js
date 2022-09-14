@@ -1,10 +1,15 @@
 ---
 nav:
+  title: 介绍
+  path: /introduction
+  order: 1
+group:
+  path: /getting-started
   title: 快速上手
   order: 1
 ---
 
-# 快速上手
+## 快速上手
 
 ## install
 

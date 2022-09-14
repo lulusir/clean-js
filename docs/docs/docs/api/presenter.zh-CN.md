@@ -2,6 +2,10 @@
 nav:
   title: API
   path: /api
+  order: 2
+group:
+  title: Presenter
+  path: /presenter
   order: 1
 ---
 
@@ -10,9 +14,10 @@ nav:
 > 提供方法和 State 给到 View
 
 1. 约束，只有在setState方法才能修改state，无法通过this.state.xxx=xxx修改
-2. setState修改以后会触发视图层更新
+2. setState修改以后会触发视图层更新，基于immer，在setSatate可以用immer的语法来修改状态
 3. 通过注入泛型来约束state的内容
 4. 可以通过redux-devtool来查看状态更新
+5. 
 
 
 
@@ -56,10 +61,10 @@ export class IndexPresenter extends Presenter<IViewState> {
 
 ## Method
 
-| 参数     | 说明              | 类型       | 默认值 |
-| -------- | ----------------- | ---------- | ------ |
-| state    | getter 返回 state | IViewState |        |
-| setState | 设置state         | IViewState |        |
+| 参数     | 说明                                                         | 类型       | 默认值 |
+| -------- | ------------------------------------------------------------ | ---------- | ------ |
+| state    | getter 返回 state                                            | IViewState |        |
+| setState | 设置state，基于immer，在setSatate可以用immer的语法来修改状态 | IViewState |        |
 
 #### PresenterFactor
 
@@ -75,4 +80,3 @@ const p = PresenterFactor.get<NamePresenter>(NamePresenter);
 ## 建议
 1. 文件命名使用xxx.presenter.ts
 2. 考虑清楚视图需要显示的state，不要把和视图无关的内容也放置到state
-3. 

@@ -1,14 +1,9 @@
+// 每个Todo都有自己的内容、状态、id
+
 export class Todo {
-  content = '';
-
-  id = '';
-
   status: 'done' | 'default' | 'delete' = 'default';
 
-  constructor(content: string) {
-    this.content = content;
-    this.id = Math.random().toString();
-  }
+  constructor(public content: string, public id: number) {}
 
   finish() {
     if (this.status === 'default') {

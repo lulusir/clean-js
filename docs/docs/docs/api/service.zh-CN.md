@@ -3,6 +3,10 @@ nav:
   title: API
   path: /api
   order: 2
+group:
+  title: Service
+  path: /service
+  order: 2
 ---
 
 # Service
