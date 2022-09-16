@@ -9,7 +9,7 @@
 
 </div>
 
-[Docs](https://lulusir.github.io/clean-js/getting-started)
+[Docs](https://lulusir.github.io/clean-js/)
 
 
 
