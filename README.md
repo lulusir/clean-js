@@ -11,16 +11,7 @@
 
 [Docs](https://lulusir.github.io/clean-js/getting-started)
 
-<h2 align = "center"> 整洁架构</h2>
 
-- 独立于框架。支持 vue react
-- 可测试。 业务逻辑方便测试
-- 独立于 UI。
-- 依赖单向，外层依赖内层，内层不知道外层
-
- <img src="https://lulusir.github.io/clean-js/CleanArchitecture.jpg" width = "600"  alt="整洁架构" align=center />
-
-来源于 Bob 大叔的一篇[文章](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 <h2 align = "center"> 目的</h2>
 
