@@ -10,6 +10,10 @@ group:
 ---
 
 # API 代码生成
+## install 
+```
+npm install @clean-js/api-gen
+```
 ## 功能
  - 根据YAPI，swagger2，swagger3等api协议自动生成请求代码
  - 声明完整的Typescript入参和出参类型 
