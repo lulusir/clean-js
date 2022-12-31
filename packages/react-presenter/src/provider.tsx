@@ -13,6 +13,8 @@ import {
 interface PresenterContext<P> {
   presenter: H<P>;
   state: H<P>['state'];
+  p: H<P>;
+  s: H<P>['state'];
 }
 
 type PresenterConstructor<P> = Constructor<H<P>>;

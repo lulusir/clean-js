@@ -53,7 +53,6 @@ const ComB = () => {
         data-testid="change"
         onClick={() => {
           presenter.changeName();
-          presenter.updateView();
         }}
       >
         ComB： change name

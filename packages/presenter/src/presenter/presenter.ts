@@ -1,6 +1,6 @@
 import EventEmitter from 'eventemitter3';
 import produce, { freeze } from 'immer';
-import { IDPool, uniqueID } from '../utils';
+import { IDPool } from '../utils';
 import { devtools } from '../utils/devtool';
 
 const emitter = new EventEmitter();
@@ -13,6 +13,8 @@ export abstract class Presenter<S> {
   private _state!: S;
 
   private id = IDPool.getInstance().uniqueID();
+
+  displayName = this.constructor.name;
 
   get state(): S {
     if (this._state === undefined) {

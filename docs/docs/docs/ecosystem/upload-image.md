@@ -49,15 +49,15 @@ npm install @routine-js/upload-image --save
 ### API
 ### example
 
-<code src="../demos/upload-image/index.tsx"></code>
+
 ### Select Service
 1. 实现选图服务，实现Select方法即可，这里可以使用库提供的方法
 2. 使用中间件；可以在这里实现判断大小，尺寸等逻辑，这个库也有默认提供的方法
 
-| 参数       | 说明                                             | 类型 | 默认值 |
-| ---------- | ------------------------------------------------ | ---- | ------ |
-| AbsSelectImageService.select | 具体的上传方法，需要用户自己实现 |   upload(): Promise\<File[])\>   |        |
-| AbsSelectImageService.useMiddleware(middleware: IMiddleware<File[]>): void  | 使用中间件，在这里可以添加对图片处理的中间件，比如校验大小..                 |   |        |
+| 参数                                                                       | 说明                                                         | 类型                         | 默认值 |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------------------- | ------ |
+| AbsSelectImageService.select                                               | 具体的上传方法，需要用户自己实现                             | upload(): Promise\<File[])\> |        |
+| AbsSelectImageService.useMiddleware(middleware: IMiddleware<File[]>): void | 使用中间件，在这里可以添加对图片处理的中间件，比如校验大小.. |                              |        |
 
 
 ```typescript
@@ -136,10 +136,10 @@ todo: 浏览器压缩图片
 
 1. 先实现上传服务，实现upload方法即可，这里你可以用OSS，七牛云...甚至上传到自己的服务器
 
-| 参数       | 说明                                             | 类型 | 默认值 |
-| ---------- | ------------------------------------------------ | ---- | ------ |
-| AbsUploadService.upload | 具体的上传方法，需要用户自己实现 |   upload(files: File): Promise\<ImageRes\>   |        |
-| ImageRes  | 需要你返回的参数                 | { name: string; url: string; thumbUrl: string; [p: string]: any;}   |        |
+| 参数                    | 说明                             | 类型                                                              | 默认值 |
+| ----------------------- | -------------------------------- | ----------------------------------------------------------------- | ------ |
+| AbsUploadService.upload | 具体的上传方法，需要用户自己实现 | upload(files: File): Promise\<ImageRes\>                          |        |
+| ImageRes                | 需要你返回的参数                 | { name: string; url: string; thumbUrl: string; [p: string]: any;} |        |
 
 
 ```typescript

@@ -50,21 +50,18 @@ export class MySelectImageService extends AbsSelectImageService {
 }
 
 const Page = () => {
-  const { presenter, state } = usePresenter<UploadImagePresenter>(
-    UploadImagePresenter,
-    {
-      registry: [
-        {
-          token: UploadServiceToken,
-          useClass: MyUploadService,
-        },
-        {
-          token: SelectImageServiceToken,
-          useClass: MySelectImageService,
-        },
-      ],
-    },
-  );
+  const { presenter, state } = usePresenter(UploadImagePresenter, {
+    registry: [
+      {
+        token: UploadServiceToken,
+        useClass: MyUploadService,
+      },
+      {
+        token: SelectImageServiceToken,
+        useClass: MySelectImageService,
+      },
+    ],
+  });
 
   const [err, setErr] = React.useState(null);
   return (

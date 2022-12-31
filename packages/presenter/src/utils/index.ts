@@ -1,11 +1,5 @@
-export function uniqueID() {
-  function chr4() {
-    return Math.random().toString(16).slice(-4);
-  }
-  return `${
-    chr4() + chr4()
-  }-${chr4()}-${chr4()}-${chr4()}-${chr4()}${chr4()}${chr4()}`;
-}
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-plusplus */
 
 export class IDPool {
   private static instance: IDPool;
@@ -17,14 +11,10 @@ export class IDPool {
     return IDPool.instance;
   }
 
-  private _pool: string[] = [];
+  private _id = 0;
 
   uniqueID() {
-    let id = uniqueID();
-    while (this._pool.includes(id)) {
-      id = uniqueID();
-    }
-    this._pool.push(id);
-    return id;
+    this._id += 1;
+    return this._id.toString();
   }
 }

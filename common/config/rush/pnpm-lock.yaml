@@ -11,9 +11,10 @@ importers:
       '@babel/plugin-proposal-decorators': ^7.16.7
       '@babel/preset-env': ^7.16.5
       '@babel/preset-typescript': ^7.16.5
-      '@clean-js/presenter': workspace:*
-      '@clean-js/react-presenter': workspace:*
-      '@routine-js/table': ~0.0.10
+      '@clean-js/presenter': 0.1.2
+      '@clean-js/react-presenter': 0.1.2
+      '@lujs/middleware': 0.0.5
+      '@routine-js/table': 1.0.4
       '@routine-js/upload-image': ~0.0.12
       '@testing-library/jest-dom': ^5.16.1
       '@testing-library/react': ^12.1.2
@@ -55,10 +56,11 @@ importers:
       webpack-cli: ^4.9.1
       yorkie: ^2.0.0
     dependencies:
-      '@clean-js/presenter': link:../../packages/presenter
-      '@clean-js/react-presenter': link:../../packages/react-presenter
-      '@routine-js/table': registry.npmmirror.com/@routine-js/table/0.0.10
-      '@routine-js/upload-image': registry.npmmirror.com/@routine-js/upload-image/0.0.13
+      '@clean-js/presenter': registry.npmmirror.com/@clean-js/presenter/0.1.2
+      '@clean-js/react-presenter': registry.npmmirror.com/@clean-js/react-presenter/0.1.2_f12ef95b82039f7035e56cab980b35f2
+      '@lujs/middleware': 0.0.5
+      '@routine-js/table': 1.0.4_304ade3acdc4a4c8f92cd4f06a0afb1f
+      '@routine-js/upload-image': registry.npmmirror.com/@routine-js/upload-image/0.0.13_81aaa677ceb6d940d3032d558a619fae
       react: registry.npmmirror.com/react/16.14.0
       reflect-metadata: registry.npmmirror.com/reflect-metadata/0.1.13
     devDependencies:
@@ -462,6 +464,20 @@ importers:
       yorkie: registry.npmmirror.com/yorkie/2.0.0
 
 packages:
+
+  /@lujs/middleware/0.0.5:
+    resolution: {integrity: sha512-kWPVvJxvrah/vWRACDCpiTDVj63enz/KUypKwTwYfNOp6SZmxZsgI69lhqOsjO76orjv9eT/9LNo2V3SuBNNcA==}
+    dev: false
+
+  /@routine-js/table/1.0.4_304ade3acdc4a4c8f92cd4f06a0afb1f:
+    resolution: {integrity: sha512-K81ygqJSqNBDuldGJKEYT5aZ8oG56tv2nmEGCXqJcwnhaHi4EW6X5IUi3JVosrjcr3dL9hSGhUZRekepVsdFmw==}
+    peerDependencies:
+      '@clean-js/presenter': ^0.1.1
+      '@clean-js/react-presenter': ^0.1.1
+    dependencies:
+      '@clean-js/presenter': registry.npmmirror.com/@clean-js/presenter/0.1.2
+      '@clean-js/react-presenter': registry.npmmirror.com/@clean-js/react-presenter/0.1.2_f12ef95b82039f7035e56cab980b35f2
+    dev: false
 
   /@types/remote-redux-devtools/0.5.0:
     resolution: {integrity: sha512-POvN4b7QvF+uliZsuOAbpNOxBBNZ5diyhgaAPGjM2jsWAjwNYCYaMFMbnRQfEQAoESlEV8vcF7SCYW9o+YWenw==}
@@ -3821,6 +3837,33 @@ packages:
     name: '@bloomberg/record-tuple-polyfill'
     version: 0.0.3
 
+  registry.npmmirror.com/@clean-js/presenter/0.1.2:
+    resolution: {integrity: sha512-P4aLfvcaTWXlu5IGiQWQFvxnNWs7HOyftxIPFPUTIxEC3MRFjaLvWtvaCyk7g8UFekPsBpOUfVPsgbuXza+UXA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@clean-js/presenter/-/presenter-0.1.2.tgz}
+    name: '@clean-js/presenter'
+    version: 0.1.2
+    dependencies:
+      '@lujs/di': registry.npmmirror.com/@lujs/di/1.1.8
+      eventemitter3: registry.npmmirror.com/eventemitter3/4.0.7
+      immer: registry.npmmirror.com/immer/9.0.7
+      reflect-metadata: registry.npmmirror.com/reflect-metadata/0.1.13
+    dev: false
+
+  registry.npmmirror.com/@clean-js/react-presenter/0.1.2_f12ef95b82039f7035e56cab980b35f2:
+    resolution: {integrity: sha512-c3Ox+JVSF1gT39yV7dGdg2p5IBYaV06Qbs/sP3YjYplm/EN9Utet848J5FwYj2773ifpscYH5E9S1VBrRIsmlQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@clean-js/react-presenter/-/react-presenter-0.1.2.tgz}
+    id: registry.npmmirror.com/@clean-js/react-presenter/0.1.2
+    name: '@clean-js/react-presenter'
+    version: 0.1.2
+    peerDependencies:
+      '@types/react': ^16.8 || ^17.0 || ^18.0
+      react: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@clean-js/presenter': registry.npmmirror.com/@clean-js/presenter/0.1.2
+      '@types/react': registry.npmmirror.com/@types/react/17.0.44
+      '@types/use-sync-external-store': registry.npmmirror.com/@types/use-sync-external-store/0.0.3
+      react: registry.npmmirror.com/react/16.14.0
+      use-sync-external-store: registry.npmmirror.com/use-sync-external-store/1.0.0_react@16.14.0
+    dev: false
+
   registry.npmmirror.com/@cnakazawa/watch/1.0.4:
     resolution: {integrity: sha512-v9kIhKwjeZThiWrLmj0y17CWoyddASLj9O2yvbZkbvw/N3rWOYy9zkV66ursAoVr0mV15bL8g0c4QZUE6cdDoQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@cnakazawa/watch/-/watch-1.0.4.tgz}
     name: '@cnakazawa/watch'
@@ -4868,8 +4911,9 @@ packages:
       '@types/estree': registry.npmmirror.com/@types/estree/0.0.51
     dev: false
 
-  registry.npmmirror.com/@routine-js/upload-image/0.0.13:
+  registry.npmmirror.com/@routine-js/upload-image/0.0.13_81aaa677ceb6d940d3032d558a619fae:
     resolution: {integrity: sha512-a5NS/MSjYcpRRIZTu1qkYoFS+Ylbwwc6j+bYq+yir+v1zzFSGdvOg8GJXXEst5ZW1CZGQt5lJCajMvkJ7EiCtA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@routine-js/upload-image/-/upload-image-0.0.13.tgz}
+    id: registry.npmmirror.com/@routine-js/upload-image/0.0.13
     name: '@routine-js/upload-image'
     version: 0.0.13
     peerDependencies:
@@ -4877,6 +4921,10 @@ packages:
       '@clean-js/react-presenter': ^0.0.4
       '@lujs/middleware': '>=0.0.4'
       dayjs: '>=1.10.7'
+    dependencies:
+      '@clean-js/presenter': registry.npmmirror.com/@clean-js/presenter/0.1.2
+      '@clean-js/react-presenter': registry.npmmirror.com/@clean-js/react-presenter/0.1.2_f12ef95b82039f7035e56cab980b35f2
+      '@lujs/middleware': 0.0.5
     dev: false
 
   registry.npmmirror.com/@sindresorhus/is/0.14.0:
@@ -23967,6 +24015,17 @@ packages:
     version: 1.0.0
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0-rc
+    dev: false
+
+  registry.npmmirror.com/use-sync-external-store/1.0.0_react@16.14.0:
+    resolution: {integrity: sha512-AFVsxg5GkFg8GDcxnl+Z0lMAz9rE8DGJCc28qnBuQF7lac57B5smLcT37aXpXIIPz75rW4g3eXHPjhHwdGskOw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/use-sync-external-store/-/use-sync-external-store-1.0.0.tgz}
+    id: registry.npmmirror.com/use-sync-external-store/1.0.0
+    name: use-sync-external-store
+    version: 1.0.0
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0-rc
+    dependencies:
+      react: registry.npmmirror.com/react/16.14.0
     dev: false
 
   registry.npmmirror.com/use/3.1.1:
