@@ -23,8 +23,6 @@ group:
 
 ## usage
 - 通过setState更新数据，触发视图更新
-- mount 生命周期，对应react/vue的mount
-- unmount生命周期，对应react/vue的unmount
 ```typescript | pure
 import {  Presenter } from "@clean-js/presenter";
 
@@ -44,13 +42,6 @@ export class IndexPresenter extends Presenter<IViewState> {
     this.state = defaultState();
   }
 
-  mount() {
-    console.log('初始化')
-  }
-
-  unmount() {
-    console.log('准备销毁')
-  }
 
   showLoading() {
     this.setState((s) => {
@@ -75,8 +66,9 @@ export class IndexPresenter extends Presenter<IViewState> {
 | -------- | ------------------------------------------------------------ | ---------- | ------ |
 | state    | getter 返回 state                                            | IViewState |        |
 | setState | 设置state，基于immer，在setSatate可以用immer的语法来修改状态 | IViewState |        |
-| mount    | 生命周期，对应react/vue的mount                               | () => void |        |
-| unmount  | 生命周期，对应react/vue的unmount                             | () => void |        |
+
+## 生命周期
+考虑了很久，还是决定不在Presenter添加生命周期的概念，Presenter只是一个单纯的状态和方法提供者。至于何时调用方法，应该写在组件里面，由调用者决定
 
 #### PresenterFactor
 

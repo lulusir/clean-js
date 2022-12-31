@@ -568,50 +568,51 @@ describe('selector and equal', () => {
   });
 });
 
-describe('lifecycle', () => {
-  it('normal', () => {
-    class P1 extends Presenter<{ name: string }> {
-      constructor(protected service: Service) {
-        super();
-        this.state = {
-          name: 'lujs',
-        };
-      }
-    }
+// 移除lifecycle的概念，这个是组件的概念，而不是状态对象的概念，状态对象，提供状态和方法即可
+// describe('lifecycle', () => {
+//   it('normal', () => {
+//     class P1 extends Presenter<{ name: string }> {
+//       constructor(protected service: Service) {
+//         super();
+//         this.state = {
+//           name: 'lujs',
+//         };
+//       }
+//     }
 
-    let count = 0;
-    const { result } = renderHook(() => {
-      count += 1;
+//     let count = 0;
+//     const { result } = renderHook(() => {
+//       count += 1;
 
-      return usePresenter(P1);
-    });
-    expect(count).toBe(1);
-    expect(result.current.p.state.name).toBe('lujs');
-  });
+//       return usePresenter(P1);
+//     });
+//     expect(count).toBe(1);
+//     expect(result.current.p.state.name).toBe('lujs');
+//   });
 
-  it('mount', () => {
-    class P1 extends Presenter<{ name: string }> {
-      constructor(protected service: Service) {
-        super();
-        this.state = {
-          name: 'lujs',
-        };
-      }
+//   it('mount', () => {
+//     class P1 extends Presenter<{ name: string }> {
+//       constructor(protected service: Service) {
+//         super();
+//         this.state = {
+//           name: 'lujs',
+//         };
+//       }
 
-      mount() {
-        this.setState((s) => {
-          s.name = 'test';
-        });
-      }
-    }
+//       mount() {
+//         this.setState((s) => {
+//           s.name = 'test';
+//         });
+//       }
+//     }
 
-    let count = 0;
-    const { result } = renderHook(() => {
-      count += 1;
+//     let count = 0;
+//     const { result } = renderHook(() => {
+//       count += 1;
 
-      return usePresenter(P1);
-    });
-    expect(count).toBe(2);
-    expect(result.current.p.state.name).toBe('test');
-  });
-});
+//       return usePresenter(P1);
+//     });
+//     expect(count).toBe(2);
+//     expect(result.current.p.state.name).toBe('test');
+//   });
+// });
