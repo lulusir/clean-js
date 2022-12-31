@@ -17,15 +17,16 @@ group:
 2. setState修改以后会触发视图层更新，基于immer，在setSatate可以用immer的语法来修改状态
 3. 通过注入泛型来约束state的内容
 4. 可以通过redux-devtool来查看状态更新
-5. 
+  
 
 
 
 ## usage
-
-
+- 通过setState更新数据，触发视图更新
+- mount 生命周期，对应react/vue的mount
+- unmount生命周期，对应react/vue的unmount
 ```typescript | pure
-import { injectable, Presenter } from "@clean-js/presenter";
+import {  Presenter } from "@clean-js/presenter";
 
 interface IViewState {
   loading: boolean;
@@ -37,11 +38,18 @@ const defaultState: () => IViewState = () => {
   };
 };
 
-@injectable()
 export class IndexPresenter extends Presenter<IViewState> {
   constructor() {
     super();
     this.state = defaultState();
+  }
+
+  mount() {
+    console.log('初始化')
+  }
+
+  unmount() {
+    console.log('准备销毁')
   }
 
   showLoading() {
@@ -59,12 +67,16 @@ export class IndexPresenter extends Presenter<IViewState> {
 
 ```
 
+
+
 ## Method
 
 | 参数     | 说明                                                         | 类型       | 默认值 |
 | -------- | ------------------------------------------------------------ | ---------- | ------ |
 | state    | getter 返回 state                                            | IViewState |        |
 | setState | 设置state，基于immer，在setSatate可以用immer的语法来修改状态 | IViewState |        |
+| mount    | 生命周期，对应react/vue的mount                               | () => void |        |
+| unmount  | 生命周期，对应react/vue的unmount                             | () => void |        |
 
 #### PresenterFactor
 
