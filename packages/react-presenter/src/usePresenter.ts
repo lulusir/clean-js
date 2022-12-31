@@ -48,7 +48,9 @@ export function usePresenter<P>(
   useEffect(() => {
     const p = presenter;
     p.__init();
+    p.mount();
     return () => {
+      p.unmount();
       p?.__destroy();
     };
   }, []);

@@ -45,6 +45,16 @@ export abstract class Presenter<S> {
   }
 
   /**
+   * hooks -- 对应react/vue的 mount
+   */
+  mount() {}
+
+  /**
+   * hooks -- 对应react/vue的 unmount
+   */
+  unmount() {}
+
+  /**
    * 通知状态更新
    * @param callback
    * @returns
