@@ -61,6 +61,11 @@
       "shouldPublish": true
     },
     {
+      "packageName": "@clean-js/pro-presenters",
+      "projectFolder": "packages/pro-presenters",
+      "shouldPublish": true
+    },
+    {
       "packageName": "@clean-js/vue-presenter",
       "projectFolder": "packages/vue-presenter",
       "versionPolicyName": "presenter",

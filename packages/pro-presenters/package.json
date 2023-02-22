@@ -1,21 +1,16 @@
 {
-  "name": "docs",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@clean-js/pro-presenters",
   "author": "lujs",
   "license": "MIT",
-  "description": "Front-end clean architecture",
+  "version": "0.0.1",
+  "description": "react adaptor",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "module": "./dist/index.esm.js",
+  "sideEffects": false,
   "files": [
     "dist"
   ],
-  "scripts": {
-    "docs:start": "dumi dev",
-    "docs:build": "dumi build",
-    "deploy": " npm run docs:build && gh-pages -d dist",
-    "build": ""
-  },
   "lint-staged": {
     "*.{js,jsx,less,md,json}": [
       "prettier --write"
@@ -26,41 +21,31 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.5",
     "@babel/plugin-proposal-decorators": "^7.16.7",
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
-    "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/react-hooks": "^8.0.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/clone": "^2.1.1",
     "@types/jest": "^27.0.3",
-    "@types/lodash.clonedeep": "^4.5.6",
-    "@types/react": "^17.0.38",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
-    "antd": "4.16.13",
     "babel-jest": "^27.4.5",
-    "babel-plugin-lodash": "^3.3.4",
     "clean-webpack-plugin": "^4.0.0",
     "declaration-bundler-webpack-plugin": "^1.0.3",
-    "dumi": "^1.0.13",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
-    "gh-pages": "^3.2.3",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "father-build": "~1.20.1",
     "jest": "^27.4.5",
-    "jest-coverage-badges": "^1.1.2",
     "lint-staged": "^10.0.7",
     "prettier": "^2.5.1",
-    "react-dom": "^17.0.2",
     "react-test-renderer": "^17.0.2",
     "terser-webpack-plugin": "^5.3.0",
-    "ts-jest": "^27.1.2",
     "ts-loader": "^9.2.6",
     "ts-node": "^10.4.0",
+    "tslib": "~2.3.1",
     "typescript": "^4.5.4",
     "webpack": "^5.65.0",
     "webpack-bundle-analyzer": "^4.5.0",
@@ -68,12 +53,12 @@
     "yorkie": "^2.0.0"
   },
   "dependencies": {
-    "@routine-js/upload-image": "~0.0.12",
-    "react": "16.14.0",
-    "@clean-js/presenter": "workspace:*",
-    "@clean-js/react-presenter": "workspace:*",
-    "reflect-metadata": "0.1.13",
-    "@routine-js/table": "1.0.4",
-    "@lujs/middleware": "0.0.5"
+    "@clean-js/presenter": "workspace:*"
+  },
+  "scripts": {
+    "build": " LERNA=none father-build",
+    "start": "webpack --watch ",
+    "test": "jest ",
+    "test:w": "jest --watch"
   }
 }
