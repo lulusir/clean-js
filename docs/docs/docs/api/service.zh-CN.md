@@ -9,9 +9,14 @@ group:
   order: 2
 ---
 
+
 # Service
 - service 用来放置业务逻辑，建议用xxx.service.ts命名文件
 - 为presenter注入服务
+
+## TODO
+- 提供一些通用，常用的service，如：cacheService
+
 ## usage
 
 1. 需要在 constructor 声明需要注入的类
@@ -68,12 +73,3 @@ export class IndexPresenter extends Presenter<IViewState> {
 }
 ```
 
-## IOC API
-
-| 参数       | 说明                                             | 类型 | 默认值 |
-| ---------- | ------------------------------------------------ | ---- | ------ |
-| injectable | 标注要使用依赖注入的类，在容器会自动注入对应的类 |      |        |
-| singleton  | 单例版本，生成的实例都是单例模式                 |      |        |
-| inject     | 用于注入接口                                     |      |        |
-
-[Why IOC](https://www.google.com/search?q=why+ioc)

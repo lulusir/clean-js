@@ -81,7 +81,7 @@ describe('should increment counter', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
   });
@@ -90,7 +90,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -104,7 +104,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -117,7 +117,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -130,7 +130,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -143,7 +143,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -164,7 +164,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(result.current.state.name === 'lujs').toBeTruthy();
   });
@@ -173,7 +173,7 @@ describe('should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
 
     const assign = () => {
@@ -190,7 +190,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -205,7 +205,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -218,7 +218,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -231,7 +231,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -244,7 +244,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -257,7 +257,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(count).toBe(1);
     act(() => {
@@ -278,7 +278,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
     expect(result.current.state.name === 'lujs').toBeTruthy();
   });
@@ -287,7 +287,7 @@ describe('auto update, should increment counter', () => {
     let count = 0;
     const { result } = renderHook(() => {
       count += 1;
-      return usePresenter<P>(P);
+      return usePresenter(P);
     });
 
     const assign = () => {
@@ -414,7 +414,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         selector: (s) => s.a.b.c,
       });
       return res;
@@ -432,7 +432,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         selector: (s) => s.a.b.c,
       });
       return res;
@@ -449,7 +449,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         selector: (s) => s.name,
       });
       return res;
@@ -466,7 +466,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         equalityFn: deepEqual,
       });
       return res;
@@ -482,7 +482,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         equalityFn: deepEqual,
       });
       return res;
@@ -500,7 +500,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {});
+      const res = usePresenter(P, {});
       return res;
     });
     expect(count).toBe(1);
@@ -516,7 +516,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         selector: (s) => s.obj,
         equalityFn: deepEqual,
       });
@@ -535,7 +535,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         selector: (s) => s.obj,
         equalityFn: (a, b) => a === b,
       });
@@ -553,7 +553,7 @@ describe('selector and equal', () => {
     const { result } = renderHook(() => {
       count += 1;
 
-      const res = usePresenter<P>(P, {
+      const res = usePresenter(P, {
         selector: (s) => s.obj,
         equalityFn: (a, b) => a === b,
       });
@@ -567,3 +567,52 @@ describe('selector and equal', () => {
     expect(count).toBe(1);
   });
 });
+
+// 移除lifecycle的概念，这个是组件的概念，而不是状态对象的概念，状态对象，提供状态和方法即可
+// describe('lifecycle', () => {
+//   it('normal', () => {
+//     class P1 extends Presenter<{ name: string }> {
+//       constructor(protected service: Service) {
+//         super();
+//         this.state = {
+//           name: 'lujs',
+//         };
+//       }
+//     }
+
+//     let count = 0;
+//     const { result } = renderHook(() => {
+//       count += 1;
+
+//       return usePresenter(P1);
+//     });
+//     expect(count).toBe(1);
+//     expect(result.current.p.state.name).toBe('lujs');
+//   });
+
+//   it('mount', () => {
+//     class P1 extends Presenter<{ name: string }> {
+//       constructor(protected service: Service) {
+//         super();
+//         this.state = {
+//           name: 'lujs',
+//         };
+//       }
+
+//       mount() {
+//         this.setState((s) => {
+//           s.name = 'test';
+//         });
+//       }
+//     }
+
+//     let count = 0;
+//     const { result } = renderHook(() => {
+//       count += 1;
+
+//       return usePresenter(P1);
+//     });
+//     expect(count).toBe(2);
+//     expect(result.current.p.state.name).toBe('test');
+//   });
+// });

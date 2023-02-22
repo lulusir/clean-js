@@ -9,7 +9,7 @@ group:
   order: 1
 ---
 
-# API 代码生成
+# HTTP API 代码生成
 ## install 
 ```
 npm install @clean-js/api-gen
@@ -17,15 +17,36 @@ npm install @clean-js/api-gen
 ## 功能
  - 根据YAPI，swagger2，swagger3等api协议自动生成请求代码
  - 声明完整的Typescript入参和出参类型 
+ - 支持路径参数替换
  - YAPI会在注释中写入该接口的地址
  - 方法命名规则为 method+url；如/user，method：post，生成的代码如下
     ```typescript
-        /** Yapi link: https://yapi.onewo.com/project/2055/interface/api/125352 */
+        /** Yapi link: https://yapi.xxxx.com/project/2055/interface/api/125352 */
     export function postUser(parameter: { body: PostUserBody }) {
       return Req.request<ResponsePostUser>({
         url: '/user',
         method: 'post',
         data: parameter.body,
+      });
+    }
+    ```
+- axios 生成代码如下
+    ```typescript
+    export function postDatasetVersionRecords(
+      parameter: {
+        body: any;
+        path: {
+          version: string;
+          dataset: string;
+        };
+      },
+      config?: AxiosRequestConfig,
+    ) {
+      return Req.request<ResponsePostDatasetVersionRecords>({
+        url: replaceUrlPath('/{dataset}/{version}/records', parameter?.path),
+        method: 'post',
+        data: parameter.body,
+        ...config,
       });
     }
     ```
@@ -67,3 +88,14 @@ function initCleanJsApi() {
   Req.set(request);
 }
 ```
+
+## Diff
+当文档发生变化，重新运行api-gen会生成diff记录,格式如下，记录新增，减少，变更多少api
+```
+Date: 2022-11-26 12:26:34
+
+Sum-up: Added 20 APIs Reduce 3 APIs 
+```
+
+Todo
+- 默认传入header属性，方便覆写

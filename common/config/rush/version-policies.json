@@ -101,7 +101,7 @@
   {
     "policyName": "presenter",
     "definitionName": "lockStepVersion",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "nextBump": "patch",
     "mainProject": "@clean-js/presenter"
   }
