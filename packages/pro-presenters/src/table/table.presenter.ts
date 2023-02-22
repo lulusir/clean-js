@@ -15,7 +15,7 @@ export interface TableState<Row = any> {
 }
 
 export class BaseTablePresenter<Row = any> extends Presenter<TableState<Row>> {
-  constructor(state?: TableState) {
+  constructor(state?: TableState<Row>) {
     super();
     if (state) {
       this.state = state;

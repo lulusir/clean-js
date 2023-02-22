@@ -5,7 +5,6 @@
 ![NPM version](https://img.shields.io/npm/v/@clean-js/presenter.svg?style=flat)
 ![Gzip size](https://img.badgesize.io/https:/unpkg.com/@clean-js/presenter/dist/index.js?label=gzip%20size&compression=gzip)
 ![GitHub](https://img.shields.io/npm/l/@clean-js/presenter)
-![Coverage line](https://raw.githubusercontent.com/lulusir/mvp/main/coverage/badge-lines.svg)
 
 </div>
 
