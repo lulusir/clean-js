@@ -4,6 +4,16 @@ import { BaseTablePresenter } from './table.presenter';
 
 export const demo = () => {
   const { presenter, state } = usePresenter(BaseTablePresenter);
+
+  useEffect(() => {
+    presenter.setUpFetchData(() => ({
+      data: [],
+      current: 1,
+      pageSize: 1,
+      total: 1,
+    }));
+  }, []);
+
   return (
     <Table
       loading={state.loading}

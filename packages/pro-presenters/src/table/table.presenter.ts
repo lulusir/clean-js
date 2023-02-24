@@ -14,6 +14,34 @@ export interface TableState<Row = any> {
   [p: string]: any;
 }
 
+interface IFetchData {
+  (
+    params: Partial<TableState['params']> & {
+      current: number;
+      pageSize: number;
+    },
+  ): Promise<{
+    data: any[];
+    current: number;
+    pageSize: number;
+    total: number;
+  }>;
+}
+
+const defaultFetchData: IFetchData = (
+  params: Partial<TableState['params']> & {
+    current: number;
+    pageSize: number;
+  },
+): Promise<{
+  data: any[];
+  current: number;
+  pageSize: number;
+  total: number;
+}> => {
+  throw Error('please use setupFetchData to setup fetchTable');
+};
+
 export class BaseTablePresenter<Row = any> extends Presenter<TableState<Row>> {
   constructor(state?: TableState<Row>) {
     super();
@@ -33,19 +61,14 @@ export class BaseTablePresenter<Row = any> extends Presenter<TableState<Row>> {
     }
   }
 
-  async fetchData(
-    params: Partial<TableState['params']> & {
-      current: number;
-      pageSize: number;
-    },
-  ): Promise<{
-    data: any[];
-    current: number;
-    pageSize: number;
-    total: number;
-  }> {
-    throw Error('请实现fetchTable');
+  setupFetchData(fn: IFetchData) {
+    if (typeof fn === 'function') {
+      this.fetchData = fn.bind(this);
+    }
+    throw Error('please pass a function');
   }
+
+  fetchData: IFetchData = defaultFetchData;
 
   _loadingCount = 0;
 
