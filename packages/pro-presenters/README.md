@@ -11,10 +11,10 @@ export const demo = () => {
     const mockFetchData = async () => ({
       data: [],
       current: 1,
-      pageSize: 1,
+      pageSize: 1,=
       total: 1,
     })
-    presenter.setupFetchData(mockFetchData);
+    presenter.setup(mockFetchData);
   }, []);
 
   return (

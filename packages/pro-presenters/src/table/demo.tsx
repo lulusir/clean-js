@@ -6,7 +6,7 @@ export const demo = () => {
   const { presenter, state } = usePresenter(BaseTablePresenter);
 
   useEffect(() => {
-    presenter.setUpFetchData(() => ({
+    presenter.setup(() => ({
       data: [],
       current: 1,
       pageSize: 1,

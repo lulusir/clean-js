@@ -39,7 +39,7 @@ const defaultFetchData: IFetchData = (
   pageSize: number;
   total: number;
 }> => {
-  throw Error('please use setupFetchData to setup fetchTable');
+  throw Error('please use setup to setup fetchTable');
 };
 
 export class BaseTablePresenter<Row = any> extends Presenter<TableState<Row>> {
@@ -61,7 +61,7 @@ export class BaseTablePresenter<Row = any> extends Presenter<TableState<Row>> {
     }
   }
 
-  setupFetchData(fn: IFetchData) {
+  setup(fn: IFetchData) {
     if (typeof fn === 'function') {
       this.fetchData = fn.bind(this);
     }
