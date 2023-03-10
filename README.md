@@ -107,3 +107,14 @@ export default Name;
   }
 }
 ```
+### 在umi4中使用
+需要在.umirc中添加插件“babel-plugin-transform-typescript-metadata”
+```
+import { defineConfig } from 'umi';
+
+export default defineConfig({
+  npmClient: 'pnpm',
+  extraBabelPlugins: ['babel-plugin-transform-typescript-metadata'],
+});
+
+```
